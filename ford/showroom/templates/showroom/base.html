@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-theme="{% if request.COOKIES.ford_theme == 'dark' %}dark{% else %}light{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the Ford Taurus, Mustang GT and Territory in the Ford showroom.">
+  <title>{% block title %}Ford{% endblock %}</title>
+  <link rel="icon" href="{% static 'showroom/images/ford.svg' %}">
+  <link rel="stylesheet" href="{% static 'showroom/css/site.css' %}">
+  <script defer src="{% static 'showroom/js/site.js' %}"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="{% url 'showroom:home' %}" aria-label="Ford home">
+        <img src="{% static 'showroom/images/ford.svg' %}" alt="Ford" width="70" height="29">
+      </a>
+      {% with page=request.resolver_match.url_name %}
+      <nav id="primary-nav" class="main-nav" aria-label="Main navigation">
+        <a href="{% url 'showroom:home' %}" {% if page == 'home' %}aria-current="page"{% endif %}>Home</a>
+        <a href="{% url 'showroom:car_list' %}" {% if page == 'car_list' %}aria-current="page"{% elif page == 'car_detail' %}aria-current="location"{% endif %}>Cars</a>
+        <a href="{% url 'showroom:about' %}" {% if page == 'about' %}aria-current="page"{% endif %}>About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      {% endwith %}
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-toggle="site-search" aria-expanded="false" aria-label="Search cars"><span class="icon" aria-hidden="true">search</span></button>
+        <form method="post" action="{% url 'showroom:set_theme' %}">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          {% if request.COOKIES.ford_theme == 'dark' %}
+          <button class="icon-button" type="submit" name="theme" value="light" aria-label="Switch to light mode"><span class="icon" aria-hidden="true">dark_mode</span></button>
+          {% else %}
+          <button class="icon-button" type="submit" name="theme" value="dark" aria-label="Switch to dark mode"><span class="icon" aria-hidden="true">light_mode</span></button>
+          {% endif %}
+        </form>
+        <a class="icon-button profile" href="https://www.me.ford.com/en/sau/ford-app/" aria-label="Ford app"><span class="icon" aria-hidden="true">person</span></a>
+        <button class="icon-button mobile-menu" type="button" data-toggle="primary-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="icon" aria-hidden="true">menu</span></button>
+      </div>
+    </div>
+    <form id="site-search" class="container search-panel" method="get" action="{% url 'showroom:car_list' %}" role="search" hidden>
+      <label for="search-field">Search the Ford showroom</label>
+      <div class="inline-form"><input id="search-field" name="q" type="search" placeholder="Try Taurus" maxlength="100" required><button class="button" type="submit">Search</button></div>
+    </form>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="{% url 'showroom:home' %}"><img src="{% static 'showroom/images/ford.svg' %}" alt="Ford" width="80" height="33"></a><p>Discover the Ford built for your road.</p></div>
+        <div><h2>Explore</h2><a href="{% url 'showroom:home' %}">Home</a><a href="{% url 'showroom:car_list' %}">Cars</a><a href="{% url 'showroom:about' %}">About Us</a><a href="https://www.me.ford.com/en/sau/contact-us/">Contact</a></div>
+        <div><h2>Support</h2><a href="https://www.me.ford.com/en/sau/ford-app/">Ford App</a><a href="https://www.me.ford.com/en/sau/download-specifications/">Specifications</a><a href="https://www.me.ford.com/en/sau/">Ford Saudi Arabia</a></div>
+        <div class="newsletter"><h2>Stay in the Loop</h2><p>Get the latest arrivals and automotive news.</p><form class="inline-form" data-demo-newsletter><input type="email" placeholder="Your email" aria-label="Your email" required><button class="button" type="submit" aria-label="Subscribe"><span class="icon" aria-hidden="true">arrow_forward</span></button></form><p class="form-status" role="status"></p></div>
+        <div class="social"><a href="https://www.instagram.com/fordmiddleeast/" aria-label="Ford Middle East on Instagram"><span class="icon" aria-hidden="true">photo_camera</span></a><a href="https://www.youtube.com/@FordMiddleEast" aria-label="Ford Middle East on YouTube"><span class="icon" aria-hidden="true">smart_display</span></a><a href="https://www.linkedin.com/company/ford-motor-company/" aria-label="Ford on LinkedIn">in</a><a href="https://x.com/FordMiddleEast" aria-label="Ford Middle East on X">X</a></div>
+      </div>
+      <div class="footer-bottom"><p>© {% now "Y" %} Ford showroom lab. Educational demo. Prices are illustrative.</p><a href="https://www.ford.com/help/privacy/">Privacy Policy</a></div>
+    </div>
+  </footer>
+</body>
+</html>

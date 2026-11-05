@@ -1,0 +1,8 @@
+{% load static %}
+<article class="car-card">
+  <a href="{{ car.get_absolute_url }}" class="card-photo"><img src="{% static car.gallery.0.src %}" alt="{{ car.name }} exterior" width="640" height="400" loading="lazy"></a>
+  <div class="card-body">
+    <div><h3><a href="{{ car.get_absolute_url }}">{{ car.name }}</a></h3><p>{{ car.price_display }}</p></div>
+    <button type="button" class="icon-button heart" data-wishlist="{{ car.slug }}" aria-label="Save {{ car.name }} to wishlist" aria-pressed="false"><span class="icon" aria-hidden="true">favorite</span></button>
+  </div>
+</article>

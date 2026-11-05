@@ -1,0 +1,32 @@
+{% extends "showroom/base.html" %}
+{% load static %}
+{% block title %}All Cars | Ford{% endblock %}
+{% block content %}
+<section class="hero sub-hero collection-hero">
+  <img class="hero-image is-active" src="{% static 'showroom/images/mustang-rear.webp' %}" alt="">
+  <div class="container hero-inner"><div class="hero-copy"><p class="eyebrow">Our Collection</p><h1>All Cars</h1><p>Explore the Ford lineup, from the Taurus sedan to the Mustang GT and Territory.</p></div></div>
+</section>
+<section class="container section inventory" aria-label="Ford inventory">
+  <form class="filters" method="get" action="{% url 'showroom:car_list' %}">
+    {% if selected.q %}<input type="hidden" name="q" value="{{ selected.q }}">{% endif %}
+    <label><span class="sr-only">Brand</span><select name="brand"><option value="">Brand</option><option value="ford" {% if selected.brand == 'ford' %}selected{% endif %}>Ford</option></select></label>
+    <label><span class="sr-only">Model</span><select name="model"><option value="">Model</option>{% for slug, name in models %}<option value="{{ slug }}" {% if selected.model == slug %}selected{% endif %}>{{ name }}</option>{% endfor %}</select></label>
+    <label><span class="sr-only">Price</span><select name="price"><option value="">Price</option>{% for key, label in prices %}<option value="{{ key }}" {% if selected.price == key %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+    <label><span class="sr-only">Year</span><select name="year"><option value="">Year</option>{% for year in years %}<option value="{{ year }}" {% if selected.year == year|stringformat:"s" %}selected{% endif %}>{{ year }}</option>{% endfor %}</select></label>
+    <button class="button secondary filter-button" type="submit" aria-label="Apply filters"><span class="icon" aria-hidden="true">tune</span></button>
+  </form>
+  <div class="section-heading results">
+    <h2>{{ page.paginator.count }} Car{{ page.paginator.count|pluralize }} Found{% if selected.q %} for “{{ selected.q }}”{% endif %}</h2>
+    {% if selected.brand or selected.model or selected.price or selected.year or selected.q %}<a class="text-link" href="{% url 'showroom:car_list' %}">Clear filters</a>{% endif %}
+  </div>
+  <div class="car-grid inventory-grid">{% for car in page %}{% include "showroom/partials/car_card.html" %}{% empty %}<p class="empty-state">No Ford vehicles match your filters.</p>{% endfor %}</div>
+  {% if page.paginator.count %}
+  <nav class="pagination" aria-label="Results pages">
+    {% if page.has_previous %}<a href="?{% if filter_query %}{{ filter_query }}&amp;{% endif %}page={{ page.previous_page_number }}" aria-label="Previous page"><span class="icon" aria-hidden="true">chevron_left</span></a>{% endif %}
+    {% for number in page_numbers %}{% if number == page.number %}<span aria-current="page">{{ number }}</span>{% else %}<a href="?{% if filter_query %}{{ filter_query }}&amp;{% endif %}page={{ number }}">{{ number }}</a>{% endif %}{% endfor %}
+    {% if page.has_next %}<a href="?{% if filter_query %}{{ filter_query }}&amp;{% endif %}page={{ page.next_page_number }}" aria-label="Next page"><span class="icon" aria-hidden="true">chevron_right</span></a>{% endif %}
+  </nav>
+  {% endif %}
+</section>
+{% endblock %}
+

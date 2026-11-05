@@ -1,0 +1,48 @@
+{% extends "showroom/base.html" %}
+{% load static %}
+{% block title %}Ford | Home{% endblock %}
+{% block content %}
+<section class="hero home-hero" aria-label="Discover Ford" data-hero>
+  {% for car in cars %}
+  <img class="hero-image{% if forloop.first %} is-active{% endif %}" src="{% if forloop.first %}{% static 'showroom/images/taurus-hero.webp' %}{% else %}{% static car.gallery.0.src %}{% endif %}" alt="" {% if not forloop.first %}loading="lazy"{% endif %}>
+  {% endfor %}
+  <div class="container hero-inner">
+    <div class="hero-copy"><h1>Performance<br>Without Limits</h1><p>Explore a collection of Ford vehicles built for every kind of drive.</p><a class="button" href="{% url 'showroom:car_list' %}">Browse Cars <span class="icon" aria-hidden="true">arrow_forward</span></a></div>
+    <div class="hero-dots" aria-label="Featured image">
+      {% for car in cars %}<button type="button" aria-label="Show {{ car.name }}" aria-pressed="{{ forloop.first|yesno:'true,false' }}"></button>{% endfor %}
+    </div>
+  </div>
+</section>
+<div class="benefit-band">
+  <ul class="container icon-grid">
+    <li><span class="icon" aria-hidden="true">bolt</span>High Performance</li>
+    <li><span class="icon" aria-hidden="true">diamond</span>Premium Selection</li>
+    <li><span class="icon" aria-hidden="true">verified_user</span>Ford Technology</li>
+    <li><span class="icon" aria-hidden="true">headset_mic</span>Dedicated Support</li>
+  </ul>
+</div>
+<section class="container section">
+  <div class="section-heading"><h2>Featured Cars</h2><a class="text-link" href="{% url 'showroom:car_list' %}">View All <span class="icon" aria-hidden="true">arrow_forward</span></a></div>
+  <div class="car-grid featured-grid">{% for car in cars %}{% include "showroom/partials/car_card.html" %}{% endfor %}</div>
+</section>
+<section class="experience">
+  <img src="{% static 'showroom/images/taurus-rear.webp' %}" alt="Ford Taurus rear lighting" loading="lazy">
+  <div><p class="eyebrow">The Experience</p><h2>More Than a Car</h2><p>From choosing a model to exploring a test drive, discover what makes each Ford feel at home on the road.</p><a href="{% url 'showroom:about' %}" class="button">Learn More <span class="icon" aria-hidden="true">arrow_forward</span></a></div>
+</section>
+<section class="container section">
+  <h2>Why Choose Us</h2>
+  <ul class="icon-grid reasons">
+    <li><span class="icon" aria-hidden="true">emoji_events</span><strong>Iconic Models</strong><small>Ford vehicles for different kinds of drivers.</small></li>
+    <li><span class="icon" aria-hidden="true">verified_user</span><strong>Clear Specifications</strong><small>Compare engines, seating and technology.</small></li>
+    <li><span class="icon" aria-hidden="true">star</span><strong>Easy to Explore</strong><small>Find the Ford that fits your drive.</small></li>
+    <li><span class="icon" aria-hidden="true">diamond</span><strong>After-Sales Care</strong><small>Explore Ford's service and support resources.</small></li>
+  </ul>
+</section>
+<section class="container section callout-wrap">
+  <div class="callout">
+    <img src="{% static 'showroom/images/mustang-rear.webp' %}" alt="" loading="lazy">
+    <div><h2>Ready to Drive<br>Your Dream Car?</h2><a href="{% url 'showroom:car_list' %}" class="button">Browse Collection <span class="icon" aria-hidden="true">arrow_forward</span></a></div>
+  </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends "showroom/base.html" %}
+{% load static %}
+{% block title %}{{ car.year }} {{ car.name }} | Ford{% endblock %}
+{% block content %}
+<div class="container detail">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{% url 'showroom:car_list' %}">Cars</a><span class="icon" aria-hidden="true">chevron_right</span><a href="{% url 'showroom:car_list' %}?brand=ford">Ford</a><span class="icon" aria-hidden="true">chevron_right</span><span aria-current="page">{{ car.name }}</span></nav>
+  <div class="detail-grid">
+    <section id="gallery" class="gallery" data-gallery aria-label="{{ car.name }} photo gallery">
+      <div class="gallery-main">
+        <img src="{% static car.gallery.0.src %}" alt="{{ car.gallery.0.alt }}" width="1200" height="800" data-gallery-image>
+        <button class="icon-button gallery-prev" type="button" data-gallery-step="-1" aria-label="Previous image"><span class="icon" aria-hidden="true">arrow_back</span></button>
+        <button class="icon-button gallery-next" type="button" data-gallery-step="1" aria-label="Next image"><span class="icon" aria-hidden="true">arrow_forward</span></button>
+      </div>
+      <div class="thumbnails">
+        {% for photo in car.gallery %}<button type="button" aria-label="{{ photo.alt }}" aria-pressed="{{ forloop.first|yesno:'true,false' }}" data-gallery-photo="{% static photo.src %}"><img src="{% static photo.src %}" alt="" width="160" height="100" loading="lazy"></button>{% endfor %}
+      </div>
+      <p class="sr-only" role="status" data-gallery-status></p>
+    </section>
+    <section class="detail-summary">
+      <p class="eyebrow">{{ car.year }} · {{ car.body_style }}</p>
+      <h1>{{ car.name }}</h1>
+      <p class="detail-price">{{ car.price_display }} <small>Demo price</small></p>
+      <dl class="spec-summary">
+        {% for icon, label, value in specs %}<div><dt><span class="icon" aria-hidden="true">{{ icon }}</span>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
+      </dl>
+      <a href="{{ car.official_url }}" class="button">Inquire Now</a>
+      <button type="button" class="button secondary heart" data-wishlist="{{ car.slug }}" aria-pressed="false"><span class="icon" aria-hidden="true">favorite</span><span data-wishlist-label>Save to Wishlist</span></button>
+    </section>
+  </div>
+  <nav class="detail-nav" aria-label="Vehicle details" data-detail-nav><a href="#overview" aria-current="location">Overview</a><a href="#specifications"><span class="desktop-label">Specifications</span><span class="mobile-label">Specs</span></a><a href="#features">Features</a><a href="#gallery">Gallery</a></nav>
+  <section class="overview" id="overview">
+    <div><h2>{{ car.headline }}</h2><p>{{ car.description }}</p></div>
+    <img src="{% static car.gallery.1.src %}" alt="{{ car.gallery.1.alt }}" width="600" height="400" loading="lazy">
+  </section>
+  <section id="specifications" class="detail-specs" aria-label="Specifications">
+    <ul class="icon-grid reasons">
+      {% for icon, label, value in specs %}<li><span class="icon" aria-hidden="true">{{ icon }}</span><strong>{{ value }}</strong><small>{{ label }}</small></li>{% endfor %}
+    </ul>
+  </section>
+  <section id="features" class="section features">
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      {% for feature in car.features %}
+      <article><img src="{% static feature.src %}" alt="" width="480" height="300" loading="lazy"><h3>{{ feature.title }}</h3><p>{{ feature.description }}</p></article>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}
