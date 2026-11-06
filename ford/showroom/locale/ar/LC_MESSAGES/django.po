@@ -1,0 +1,1167 @@
+# Arabic translations for the Ford showroom.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ford Showroom\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "%(months)s months"
+msgstr "%(months)s شهرًا"
+
+msgid "%(vehicle)s full-screen gallery"
+msgstr "معرض صور %(vehicle)s بملء الشاشة"
+
+msgid "%(vehicle)s photo gallery"
+msgstr "معرض صور %(vehicle)s"
+
+msgid "%(year)s Ford showroom lab. Educational demo. Prices are illustrative."
+msgstr "%(year)s معرض فورد التعليمي. الأسعار تجريبية."
+
+msgid "1.5L turbo hybrid"
+msgstr "هجين تيربو سعة 1.5 لتر"
+
+msgid "1.6L EcoBoost"
+msgstr "إيكوبوست سعة 1.6 لتر"
+
+msgid "10-speed automatic"
+msgstr "أوتوماتيكي بـ10 سرعات"
+
+msgid "13.2-inch Touchscreen"
+msgstr "شاشة لمس مقاس 13.2 بوصة"
+
+msgid "148 hp petrol engine"
+msgstr "محرك بنزين بقوة 148 حصانًا"
+
+msgid "197 hp"
+msgstr "197 حصانًا"
+
+msgid "2-speed hybrid automatic"
+msgstr "أوتوماتيكي هجين بسرعتين"
+
+msgid "2.0-litre EcoBoost"
+msgstr "إيكوبوست سعة 2.0 لتر"
+
+msgid "2.0L EcoBoost"
+msgstr "إيكوبوست سعة 2.0 لتر"
+
+msgid "2.3L EcoBoost"
+msgstr "إيكوبوست سعة 2.3 لتر"
+
+msgid "2010 Ford Mustang GT front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج جي تي 2010"
+
+msgid "2010 Ford Mustang GT front view"
+msgstr "واجهة أمامية لسيارة فورد موستانج جي تي 2010"
+
+msgid "2011 Ford Mustang Shelby GT500 front view"
+msgstr "واجهة أمامية لسيارة فورد موستانج شيلبي GT500 2011"
+
+msgid "2011 Ford Mustang Shelby GT500 side profile"
+msgstr "منظر جانبي لسيارة فورد موستانج شيلبي GT500 2011"
+
+msgid "2012 Ford Mustang Boss 302 exterior at a car show"
+msgstr "صورة خارجية في معرض سيارات لسيارة فورد موستانج بوس 302 2012"
+
+msgid "2012 Ford Mustang Boss 302 front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج بوس 302 2012"
+
+msgid "2013 Ford Focus ST front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد فوكس ST 2013"
+
+msgid "2013 Ford Focus ST rear light detail"
+msgstr "تفاصيل المصباح الخلفي لسيارة فورد فوكس ST 2013"
+
+msgid "2014 Ford Fiesta ST exterior at a motor show"
+msgstr "صورة خارجية في معرض سيارات لسيارة فورد فييستا ST 2014"
+
+msgid "2014 Ford Fiesta ST exterior in a showroom"
+msgstr "صورة خارجية في صالة العرض لسيارة فورد فييستا ST 2014"
+
+msgid "2015 Ford Mustang GT exterior"
+msgstr "صورة خارجية لسيارة فورد موستانج جي تي 2015"
+
+msgid "2015 Ford Mustang GT front view"
+msgstr "واجهة أمامية لسيارة فورد موستانج جي تي 2015"
+
+msgid "2016 Ford Focus RS blue example"
+msgstr "صورة للنسخة الزرقاء لسيارة فورد فوكس RS 2016"
+
+msgid "2016 Ford Focus RS front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد فوكس RS 2016"
+
+msgid "2017 Ford GT front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد جي تي 2017"
+
+msgid "2017 Ford GT rear three-quarter view"
+msgstr "زاوية خلفية جانبية لسيارة فورد جي تي 2017"
+
+msgid "2018 Ford Mustang GT facelift exterior"
+msgstr "الهيكل المحدّث لسيارة فورد موستانج جي تي 2018"
+
+msgid "2018 Ford Mustang GT interior"
+msgstr "المقصورة لسيارة فورد موستانج جي تي 2018"
+
+msgid "2019 Ford Mustang Bullitt front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج بوليت 2019"
+
+msgid "2019 Ford Mustang Bullitt rear view"
+msgstr "واجهة خلفية لسيارة فورد موستانج بوليت 2019"
+
+msgid "2020 Ford Mustang Shelby GT500 front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج شيلبي GT500 2020"
+
+msgid "2020 Ford Mustang Shelby GT500 rear view"
+msgstr "واجهة خلفية لسيارة فورد موستانج شيلبي GT500 2020"
+
+msgid "2021 Ford Mustang Mach 1 exterior detail"
+msgstr "تفاصيل خارجية لسيارة فورد موستانج ماك 1 2021"
+
+msgid "2021 Ford Mustang Mach 1 front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج ماك 1 2021"
+
+msgid "2022 Ford Bronco Raptor on snow"
+msgstr "صورة على الثلج لسيارة فورد برونكو رابتور 2022"
+
+msgid "2022 Ford Bronco Raptor rear three-quarter view"
+msgstr "زاوية خلفية جانبية لسيارة فورد برونكو رابتور 2022"
+
+msgid "2023 Ford Mustang Mach-E GT front three-quarter view"
+msgstr "زاوية أمامية جانبية لسيارة فورد موستانج ماك إي جي تي 2023"
+
+msgid "2023 Ford Mustang Mach-E GT interior"
+msgstr "المقصورة لسيارة فورد موستانج ماك إي جي تي 2023"
+
+msgid "2023 Ford Mustang Mach-E GT rear three-quarter view"
+msgstr "زاوية خلفية جانبية لسيارة فورد موستانج ماك إي جي تي 2023"
+
+msgid "2024 Ford Ranger Raptor exterior at a motor show"
+msgstr "صورة خارجية في معرض سيارات لسيارة فورد رينجر رابتور 2024"
+
+msgid "2024 Ford Ranger Raptor front view"
+msgstr "واجهة أمامية لسيارة فورد رينجر رابتور 2024"
+
+msgid "239 hp"
+msgstr "239 حصانًا"
+
+msgid "252 hp"
+msgstr "252 حصانًا"
+
+msgid "3.0L EcoBoost V6"
+msgstr "إيكوبوست V6 سعة 3.0 لتر"
+
+msgid "3.5L EcoBoost V6"
+msgstr "إيكوبوست V6 سعة 3.5 لتر"
+
+msgid "3.5L High-Output EcoBoost V6"
+msgstr "إيكوبوست V6 عالي الأداء سعة 3.5 لتر"
+
+msgid "315 hp"
+msgstr "315 حصانًا"
+
+msgid "350 hp"
+msgstr "350 حصانًا"
+
+msgid "4.6L V8"
+msgstr "ثماني أسطوانات V8 سعة 4.6 لتر"
+
+msgid "405 hp"
+msgstr "405 حصانًا"
+
+msgid "418 hp"
+msgstr "418 حصانًا"
+
+msgid "420 hp (Saudi spec)"
+msgstr "420 حصان (مواصفات سعودية)"
+
+msgid "435 hp"
+msgstr "435 حصانًا"
+
+msgid "444 hp"
+msgstr "444 حصانًا"
+
+msgid "460 PS (EU spec)"
+msgstr "460 حصانًا متريًا (مواصفات أوروبية)"
+
+msgid "460 hp"
+msgstr "460 حصانًا"
+
+msgid "480 hp"
+msgstr "480 حصانًا"
+
+msgid "5-speed manual"
+msgstr "يدوي بـ5 سرعات"
+
+msgid "5.0L Coyote V8"
+msgstr "كايوتي V8 سعة 5.0 لتر"
+
+msgid "5.0L V8"
+msgstr "ثماني أسطوانات V8 سعة 5.0 لتر"
+
+msgid "5.2L supercharged V8"
+msgstr "ثماني أسطوانات V8 سعة 5.2 لتر بشاحن فائق"
+
+msgid "5.4L supercharged V8"
+msgstr "ثماني أسطوانات V8 سعة 5.4 لتر بشاحن فائق"
+
+msgid "500 hp (US spec)"
+msgstr "500 حصان (مواصفات أمريكية)"
+
+msgid "550 hp"
+msgstr "550 حصانًا"
+
+msgid "6-speed manual"
+msgstr "يدوي بـ6 سرعات"
+
+msgid "647 hp"
+msgstr "647 حصانًا"
+
+msgid "7-speed dual-clutch"
+msgstr "قابض مزدوج بـ7 سرعات"
+
+msgid "760 hp"
+msgstr "760 حصانًا"
+
+msgid "8-speed automatic"
+msgstr "أوتوماتيكي بـ8 سرعات"
+
+msgid "A 12-inch centre display brings key controls within easy reach."
+msgstr "تضع الشاشة الوسطية مقاس 12 بوصة أدوات التحكم الأساسية في متناول اليد."
+
+msgid "A 760-hp Shelby"
+msgstr "شيلبي بقوة 760 حصانًا"
+
+msgid "A Mustang built for the track"
+msgstr "موستانج صُمّمت للحلبة"
+
+msgid "A configurable digital cluster and centre touchscreen put controls in the driver's view."
+msgstr "تضع العدادات الرقمية القابلة للتخصيص وشاشة اللمس الوسطية عناصر التحكم أمام السائق."
+
+msgid "A gloss-black grille and 20-inch wheels distinguish the Platinum trim."
+msgstr "يميّز فئة بلاتينيوم شبك أسود لامع وعجلات مقاس 20 بوصة."
+
+msgid "A lighter Shelby V8"
+msgstr "محرك شيلبي V8 أخف وزنًا"
+
+msgid "A long bonnet and sweeping roofline carry the Mustang shape forward."
+msgstr "يحافظ الغطاء الأمامي الطويل والسقف المنحدر على ملامح موستانج."
+
+msgid "A mid-engine Ford supercar"
+msgstr "سيارة فورد خارقة بمحرك وسطي"
+
+msgid "A midsize Raptor"
+msgstr "رابتور متوسطة الحجم"
+
+msgid "A new Mustang generation"
+msgstr "جيل جديد من موستانج"
+
+msgid "A purchase request for this car already uses this email."
+msgstr "يوجد طلب شراء لهذه السيارة بالبريد الإلكتروني نفسه."
+
+msgid "A selectable drive mode tuned for loose off-road terrain."
+msgstr "وضع قيادة مخصّص للأسطح الرخوة خارج الطرق المعبّدة."
+
+msgid "A shared appreciation for cars with character."
+msgstr "شغف مشترك بالسيارات ذات الطابع المميّز."
+
+msgid "A tribute to Bullitt"
+msgstr "تحية لموستانج فيلم بوليت"
+
+msgid "A turbocharged hot hatch"
+msgstr "هاتشباك رياضية بشاحن توربيني"
+
+msgid "A wide stance and sculpted body give the Taurus a composed presence."
+msgstr "تعطي الوقفة العريضة والخطوط المنحوتة تورس حضورًا على الطريق."
+
+msgid "A wider Bronco for the trail"
+msgstr "برونكو أعرض للطرق الوعرة"
+
+msgid "Abha"
+msgstr "أبها"
+
+msgid "About Us"
+msgstr "من نحن"
+
+msgid "About Us | Ford"
+msgstr "من نحن | فورد"
+
+msgid "Access navigation and compatible phone apps from the central display."
+msgstr "استخدم الملاحة وتطبيقات الهاتف المتوافقة عبر الشاشة الوسطية."
+
+msgid "Active aerodynamics"
+msgstr "ديناميكا هوائية نشطة"
+
+msgid "Adaptive dampers adjust to changing road conditions."
+msgstr "تتكيّف ممتصات الصدمات مع تغيّر ظروف الطريق."
+
+msgid "Additional cooling"
+msgstr "تبريد إضافي"
+
+msgid "After-Sales Care"
+msgstr "خدمات ما بعد البيع"
+
+msgid "Al Jazirah Ford showroom in Saudi Arabia"
+msgstr "معرض الجزيرة لفورد في السعودية"
+
+msgid "All Cars"
+msgstr "جميع السيارات"
+
+msgid "All Cars | Ford"
+msgstr "جميع السيارات | فورد"
+
+msgid "All-wheel-drive Focus RS"
+msgstr "فوكس RS بدفع رباعي"
+
+msgid "An updated GT fastback"
+msgstr "فاستباك جي تي محدّثة"
+
+msgid "Annual rate"
+msgstr "النسبة السنوية"
+
+msgid "Apply filters"
+msgstr "تطبيق الفلاتر"
+
+msgid "Attention to the design and engineering that shape every drive."
+msgstr "اهتمام بالتصميم والهندسة في كل تجربة قيادة."
+
+msgid "Baja Mode"
+msgstr "وضع باها"
+
+msgid "Based on the %(price)s demo price. Estimates exclude fees."
+msgstr "يعتمد الحساب على السعر التجريبي %(price)s. التقدير لا يشمل الرسوم."
+
+msgid "Blue Ford F-150 Raptor driving on a dirt trail"
+msgstr "فورد F‑150 رابتور زرقاء على طريق ترابي"
+
+msgid "Body style"
+msgstr "نوع الهيكل"
+
+msgid "Book a Test Drive"
+msgstr "احجز تجربة قيادة"
+
+msgid "Book a test drive"
+msgstr "حجز تجربة قيادة"
+
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+msgid "Breadcrumb"
+msgstr "مسار التنقل"
+
+msgid "Browse Cars"
+msgstr "تصفّح السيارات"
+
+msgid "Browse Collection"
+msgstr "تصفّح التشكيلة"
+
+msgid "Buy with Cash"
+msgstr "شراء نقدًا"
+
+msgid "Calculate payment"
+msgstr "احسب القسط"
+
+msgid "Cars"
+msgstr "السيارات"
+
+msgid "Cash price for this demo is %(price)s. Submit a request to try the purchase flow. No payment is collected."
+msgstr "السعر النقدي التجريبي %(price)s. يمكنك إرسال طلب لتجربة الشراء دون دفع."
+
+msgid "Choose a city"
+msgstr "اختر المدينة"
+
+msgid "Choose a city and a date for a demo test drive. Times are in Saudi Arabia."
+msgstr "اختر المدينة والتاريخ لتجربة قيادة تجريبية. جميع المواعيد بتوقيت السعودية."
+
+msgid "Choose a date"
+msgstr "اختر التاريخ"
+
+msgid "Choose a date between tomorrow and 30 days from today."
+msgstr "اختر تاريخًا من الغد وحتى 30 يومًا من اليوم."
+
+msgid "Choose a model"
+msgstr "اختر الموديل"
+
+msgid "Choose a time"
+msgstr "اختر الوقت"
+
+msgid "Choose two different cars from the inventory."
+msgstr "اختر سيارتين مختلفتين من المعرض."
+
+msgid "City"
+msgstr "المدينة"
+
+msgid "Clear Specifications"
+msgstr "مواصفات واضحة"
+
+msgid "Clear filters"
+msgstr "مسح الفلاتر"
+
+msgid "Clear vehicle information to help you explore your options."
+msgstr "معلومات واضحة عن السيارات تساعدك على استكشاف خياراتك."
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Compact and manual"
+msgstr "حجم مدمج وناقل يدوي"
+
+msgid "Compare"
+msgstr "قارن"
+
+msgid "Compare cars"
+msgstr "قارن السيارات"
+
+msgid "Compare engines, seating and technology."
+msgstr "قارن المحركات والمقاعد والتقنيات."
+
+msgid "Confident Styling"
+msgstr "تصميم لافت"
+
+msgid "Confirm demo booking"
+msgstr "أكّد الحجز التجريبي"
+
+msgid "Connected Cabin"
+msgstr "مقصورة متصلة"
+
+msgid "Contact"
+msgstr "تواصل معنا"
+
+msgid "Coupe"
+msgstr "كوبيه"
+
+msgid "Crossover SUV"
+msgstr "كروس أوفر"
+
+msgid "Dammam"
+msgstr "الدمام"
+
+msgid "Dark Highland Green"
+msgstr "أخضر هايلاند الداكن"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Dedicated Support"
+msgstr "دعم متخصّص"
+
+msgid "Demo booking #%(number)s confirmed in %(city)s on %(date)s at %(time)s."
+msgstr "تم تأكيد الحجز التجريبي رقم %(number)s في %(city)s يوم %(date)s الساعة %(time)s."
+
+msgid "Demo price"
+msgstr "سعر تجريبي"
+
+msgid "Demo purchase request #%(number)s received."
+msgstr "تم استلام طلب الشراء التجريبي رقم %(number)s."
+
+msgid "Demo signup complete."
+msgstr "تم التسجيل التجريبي."
+
+msgid "Digital Cockpit"
+msgstr "مقصورة قيادة رقمية"
+
+msgid "Discover Ford"
+msgstr "اكتشف فورد"
+
+msgid "Discover the Ford built for your road."
+msgstr "اكتشف سيارة فورد التي تناسب طريقك."
+
+msgid "Discover the design, engineering and character behind the Ford vehicles in our showroom."
+msgstr "اكتشف التصميم والهندسة والطابع المميّز لسيارات فورد في معرضنا."
+
+msgid "Down payment (SAR)"
+msgstr "الدفعة الأولى (ريال)"
+
+msgid "Driven by"
+msgstr "شغفنا"
+
+msgid "Dual electric motors"
+msgstr "محركان كهربائيان"
+
+msgid "Dual-motor all-wheel drive"
+msgstr "دفع رباعي بمحركين كهربائيين"
+
+msgid "Easy to Explore"
+msgstr "تصفّح سهل"
+
+msgid "Electric Mustang performance"
+msgstr "أداء موستانج الكهربائي"
+
+msgid "Electric SUV"
+msgstr "سيارة كهربائية متعددة الاستخدامات"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Enable JavaScript to calculate a payment."
+msgstr "فعّل جافاسكربت لحساب القسط."
+
+msgid "Engine"
+msgstr "المحرك"
+
+msgid "Enter a valid down payment and annual rate."
+msgstr "أدخل دفعة أولى ونسبة سنوية صالحتين."
+
+msgid "Estimate Payments"
+msgstr "احسب الأقساط"
+
+msgid "Everyday Comfort, Confident Power"
+msgstr "راحة يومية وأداء واثق"
+
+msgid "Excellence"
+msgstr "التميّز"
+
+msgid "Explore"
+msgstr "استكشف"
+
+msgid "Explore Ford model years from 2010 onward, from everyday sedans to track-ready coupes and off-road trucks."
+msgstr "استكشف موديلات فورد من 2010 فما فوق، من سيارات السيدان اليومية إلى الكوبيه الرياضية والشاحنات للطرق الوعرة."
+
+msgid "Explore Ford models, compare specifications, and plan a demo test drive."
+msgstr "تصفّح موديلات فورد وقارن المواصفات وخطّط لتجربة قيادة تجريبية."
+
+msgid "Explore Ford's service and support resources."
+msgstr "اطّلع على خدمات فورد وموارد الدعم."
+
+msgid "Explore a collection of Ford vehicles built for every kind of drive."
+msgstr "اكتشف مجموعة من سيارات فورد لمختلف أساليب القيادة."
+
+msgid "Explore on Ford"
+msgstr "المزيد على موقع فورد"
+
+msgid "Fastback"
+msgstr "فاستباك"
+
+msgid "Fastback Profile"
+msgstr "تصميم فاستباك"
+
+msgid "Featured Cars"
+msgstr "السيارات المميزة"
+
+msgid "Featured image"
+msgstr "الصورة المميزة"
+
+msgid "Features"
+msgstr "المزايا"
+
+msgid "Find the Ford that fits the way you want to drive."
+msgstr "اختر سيارة فورد التي تناسب أسلوبك في القيادة."
+
+msgid "Find the Ford that fits your drive."
+msgstr "اعثر على فورد التي تناسب أسلوب قيادتك."
+
+msgid "First car"
+msgstr "السيارة الأولى"
+
+msgid "Five-speed manual"
+msgstr "ناقل يدوي بخمس سرعات"
+
+msgid "Ford"
+msgstr "فورد"
+
+msgid "Ford App"
+msgstr "تطبيق فورد"
+
+msgid "Ford Bronco Raptor"
+msgstr "فورد برونكو رابتور"
+
+msgid "Ford F-150 Raptor"
+msgstr "فورد F‑150 رابتور"
+
+msgid "Ford F-150 Raptor on desert terrain"
+msgstr "فورد F‑150 رابتور في الصحراء"
+
+msgid "Ford Fiesta ST"
+msgstr "فورد فييستا ST"
+
+msgid "Ford Focus RS"
+msgstr "فورد فوكس RS"
+
+msgid "Ford Focus ST"
+msgstr "فورد فوكس ST"
+
+msgid "Ford GT"
+msgstr "فورد جي تي"
+
+msgid "Ford Middle East on Instagram"
+msgstr "فورد الشرق الأوسط على إنستغرام"
+
+msgid "Ford Middle East on X"
+msgstr "فورد الشرق الأوسط على إكس"
+
+msgid "Ford Middle East on YouTube"
+msgstr "فورد الشرق الأوسط على يوتيوب"
+
+msgid "Ford Motor Company was founded in 1903. The Ford range has grown to serve very different drivers, from those who want the comfort of the Taurus to those drawn to the Mustang GT or the versatility of the Territory."
+msgstr "تأسست شركة فورد للسيارات عام 1903. وتوسّعت تشكيلتها لتلائم احتياجات مختلفة، من راحة تورس إلى أداء موستانج جي تي ومرونة تيريتوري."
+
+msgid "Ford Mustang Boss 302"
+msgstr "فورد موستانج بوس 302"
+
+msgid "Ford Mustang Bullitt"
+msgstr "فورد موستانج بوليت"
+
+msgid "Ford Mustang Dark Horse"
+msgstr "فورد موستانج دارك هورس"
+
+msgid "Ford Mustang Dark Horse exterior"
+msgstr "الهيكل الخارجي لموستانج دارك هورس"
+
+msgid "Ford Mustang GT"
+msgstr "فورد موستانج جي تي"
+
+msgid "Ford Mustang GT driver cockpit"
+msgstr "مقصورة قيادة موستانج جي تي"
+
+msgid "Ford Mustang GT exterior detail"
+msgstr "تفاصيل الهيكل الخارجي لموستانج جي تي"
+
+msgid "Ford Mustang GT from the front three-quarter angle"
+msgstr "فورد موستانج جي تي من الزاوية الأمامية"
+
+msgid "Ford Mustang GT rear and signature tri-bar lamps"
+msgstr "الجزء الخلفي لموستانج جي تي ومصابيحها الثلاثية"
+
+msgid "Ford Mustang Mach 1"
+msgstr "فورد موستانج ماك 1"
+
+msgid "Ford Mustang Mach-E GT"
+msgstr "فورد موستانج ماك إي جي تي"
+
+msgid "Ford Mustang Shelby GT500"
+msgstr "فورد موستانج شيلبي GT500"
+
+msgid "Ford Ranger Raptor"
+msgstr "فورد رينجر رابتور"
+
+msgid "Ford Saudi Arabia"
+msgstr "فورد السعودية"
+
+msgid "Ford Taurus"
+msgstr "فورد تورس"
+
+msgid "Ford Taurus cabin and touchscreen"
+msgstr "مقصورة تورس وشاشة اللمس"
+
+msgid "Ford Taurus exterior detail"
+msgstr "تفاصيل الهيكل الخارجي لتورس"
+
+msgid "Ford Taurus from the front three-quarter angle"
+msgstr "فورد تورس من الزاوية الأمامية"
+
+msgid "Ford Taurus rear lighting"
+msgstr "الإضاءة الخلفية لفورد تورس"
+
+msgid "Ford Technology"
+msgstr "تقنيات فورد"
+
+msgid "Ford Territory"
+msgstr "فورد تيريتوري"
+
+msgid "Ford Territory Platinum dashboard and cabin"
+msgstr "لوحة القيادة ومقصورة تيريتوري بلاتينيوم"
+
+msgid "Ford Territory Platinum exterior detail"
+msgstr "تفاصيل الهيكل الخارجي لتيريتوري بلاتينيوم"
+
+msgid "Ford Territory Platinum from the front three-quarter angle"
+msgstr "فورد تيريتوري بلاتينيوم من الزاوية الأمامية"
+
+msgid "Ford Territory Platinum viewed from behind"
+msgstr "فورد تيريتوري بلاتينيوم من الخلف"
+
+msgid "Ford app"
+msgstr "تطبيق فورد"
+
+msgid "Ford brought back the Boss 302 with a high-output version of the 5.0-litre V8."
+msgstr "أعادت فورد طرح بوس 302 بمحرك V8 سعة 5.0 لتر بقوة أعلى."
+
+msgid "Ford equipped the Focus RS with a 2.3-litre turbo engine and performance all-wheel drive."
+msgstr "زوّدت فورد فوكس RS بمحرك توربيني سعة 2.3 لتر ونظام دفع رباعي رياضي."
+
+msgid "Ford home"
+msgstr "الصفحة الرئيسية لفورد"
+
+msgid "Ford inventory"
+msgstr "سيارات فورد المتوفرة في المعرض"
+
+msgid "Ford offered the 10-speed automatic for the GT in 2018."
+msgstr "أتاحت فورد ناقلًا أوتوماتيكيًا بعشر سرعات لفئة جي تي في 2018."
+
+msgid "Ford offered the signature green finish alongside black."
+msgstr "أتاحت فورد اللون الأخضر المميّز إلى جانب الأسود."
+
+msgid "Ford on LinkedIn"
+msgstr "فورد على لينكدإن"
+
+msgid "Ford rated the upgraded V8 at 550 hp."
+msgstr "صنّفت فورد المحرك المطوّر بقوة 550 حصانًا."
+
+msgid "Ford reshaped the Mustang for 2010 and offered the GT with a 4.6-litre V8."
+msgstr "أعادت فورد تصميم موستانج لعام 2010 وقدّمت فئة جي تي بمحرك V8 سعة 4.6 لتر."
+
+msgid "Ford upgraded cooling to support extended high-load driving."
+msgstr "طوّرت فورد نظام التبريد لدعم القيادة لفترات أطول تحت الأحمال العالية."
+
+msgid "Ford vehicles for different kinds of drivers."
+msgstr "سيارات فورد تناسب مختلف السائقين."
+
+msgid "Ford | Home"
+msgstr "فورد | الرئيسية"
+
+msgid "From choosing a model to exploring a test drive, discover what makes each Ford feel at home on the road."
+msgstr "من اختيار الموديل إلى تجربة القيادة، اكتشف ما يميّز كل سيارة فورد على الطريق."
+
+msgid "Front and rear locking differentials help maintain traction on uneven surfaces."
+msgstr "تساعد الأقفال التفاضلية الأمامية والخلفية على الحفاظ على التماسك فوق الأسطح غير المستوية."
+
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+msgid "Gallery"
+msgstr "معرض الصور"
+
+msgid "Gearbox"
+msgstr "ناقل الحركة"
+
+msgid "Get the latest arrivals and automotive news."
+msgstr "تابع أحدث السيارات وأخبارها."
+
+msgid "Hands-Free Liftgate"
+msgstr "باب خلفي يفتح دون استخدام اليدين"
+
+msgid "Hatchback"
+msgstr "هاتشباك"
+
+msgid "High Performance"
+msgstr "أداء عالٍ"
+
+msgid "High-Output EcoBoost"
+msgstr "إيكوبوست عالي الأداء"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Iconic Models"
+msgstr "موديلات مميّزة"
+
+msgid "Independent rear suspension"
+msgstr "تعليق خلفي مستقل"
+
+msgid "Independent rear suspension replaced the previous GT's solid rear axle."
+msgstr "حلّ التعليق الخلفي المستقل محل المحور الخلفي الصلب في الجيل السابق."
+
+msgid "Installment calculator"
+msgstr "حاسبة الأقساط"
+
+msgid "Jeddah"
+msgstr "جدة"
+
+msgid "Key Features"
+msgstr "أبرز المزايا"
+
+msgid "LED Lighting"
+msgstr "إضاءة LED"
+
+msgid "Learn More"
+msgstr "اعرف المزيد"
+
+msgid "Locking differentials"
+msgstr "أقفال تفاضلية"
+
+msgid "Long-travel suspension"
+msgstr "تعليق طويل المشوار"
+
+msgid "Mach 1 returns"
+msgstr "عودة ماك 1"
+
+msgid "Madinah"
+msgstr "المدينة المنوّرة"
+
+msgid "MagneRide Damping"
+msgstr "تعليق ماجنا رايد"
+
+msgid "Main navigation"
+msgstr "القائمة الرئيسية"
+
+msgid "Makkah"
+msgstr "مكة المكرمة"
+
+msgid "Model"
+msgstr "الموديل"
+
+msgid "Model year"
+msgstr "سنة الموديل"
+
+msgid "More Than a Car"
+msgstr "أكثر من مجرد سيارة"
+
+msgid "More Than a Dealer"
+msgstr "أكثر من مجرد معرض"
+
+msgid "Mustang Dark Horse cockpit and manual shifter"
+msgstr "مقصورة موستانج دارك هورس وناقلها اليدوي"
+
+msgid "Next full-screen image"
+msgstr "الصورة التالية بملء الشاشة"
+
+msgid "Next image"
+msgstr "الصورة التالية"
+
+msgid "Next page"
+msgstr "الصفحة التالية"
+
+msgid "No Ford vehicles match your filters."
+msgstr "لا توجد سيارات فورد تطابق الفلاتر."
+
+msgid "One electric motor drives each axle."
+msgstr "يتولى محرك كهربائي دفع كل محور."
+
+msgid "Our Collection"
+msgstr "تشكيلتنا"
+
+msgid "Our Story"
+msgstr "قصتنا"
+
+msgid "Our Values"
+msgstr "قيمنا"
+
+msgid "Overview"
+msgstr "نظرة عامة"
+
+msgid "Passion"
+msgstr "القيادة"
+
+msgid "Passion for Cars"
+msgstr "الشغف بالسيارات"
+
+msgid "Performance"
+msgstr "أداء"
+
+msgid "Performance beyond the pavement"
+msgstr "أداء خارج الطرق المعبّدة"
+
+msgid "Photo credits"
+msgstr "مصادر الصور"
+
+msgid "Pickup"
+msgstr "بيك أب"
+
+msgid "Platinum Styling"
+msgstr "تصميم بلاتينيوم"
+
+msgid "Power"
+msgstr "القوة"
+
+msgid "Premium Selection"
+msgstr "تشكيلة مختارة"
+
+msgid "Previous full-screen image"
+msgstr "الصورة السابقة بملء الشاشة"
+
+msgid "Previous image"
+msgstr "الصورة السابقة"
+
+msgid "Previous page"
+msgstr "الصفحة السابقة"
+
+msgid "Price"
+msgstr "السعر"
+
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+msgid "Ready to Drive"
+msgstr "جاهز لقيادة"
+
+msgid "Rear lighting and exterior of the Ford Taurus"
+msgstr "تصميم تورس وإضاءتها الخلفية"
+
+msgid "Request cash purchase"
+msgstr "طلب شراء نقدي"
+
+msgid "Results for “%(query)s”"
+msgstr "نتائج البحث عن «%(query)s»"
+
+msgid "Results pages"
+msgstr "صفحات النتائج"
+
+msgid "Riyadh"
+msgstr "الرياض"
+
+msgid "Room for the Next Adventure"
+msgstr "مساحة للمغامرة القادمة"
+
+msgid "SAR %(amount)s"
+msgstr "%(amount)s ر.س"
+
+msgid "SAR 130,000 and above"
+msgstr "130,000 ريال فأكثر"
+
+msgid "SUV"
+msgstr "دفع رباعي"
+
+msgid "Save %(vehicle)s to wishlist"
+msgstr "أضف %(vehicle)s إلى المفضلة"
+
+msgid "Save to Wishlist"
+msgstr "أضف إلى المفضلة"
+
+msgid "Saved to Wishlist"
+msgstr "أُضيفت إلى المفضلة"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search cars"
+msgstr "ابحث عن سيارة"
+
+msgid "Search the Ford showroom"
+msgstr "ابحث في معرض فورد"
+
+msgid "Seats"
+msgstr "المقاعد"
+
+msgid "Second car"
+msgstr "السيارة الثانية"
+
+msgid "Sedan"
+msgstr "سيدان"
+
+msgid "Selectable drive modes"
+msgstr "أوضاع قيادة متعددة"
+
+msgid "Selected Ford models and specifications"
+msgstr "موديلات فورد المختارة ومواصفاتها"
+
+msgid "Seven-speed dual-clutch"
+msgstr "ناقل بقابض مزدوج وسبع سرعات"
+
+msgid "Show %(vehicle)s"
+msgstr "اعرض %(vehicle)s"
+
+msgid "Side by side"
+msgstr "جنبًا إلى جنب"
+
+msgid "Single-speed electric drive"
+msgstr "نظام دفع كهربائي بنسبة واحدة"
+
+msgid "Six-Speed Manual"
+msgstr "ناقل يدوي بست سرعات"
+
+msgid "Six-speed gearbox"
+msgstr "ناقل بست سرعات"
+
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+msgid "Spec"
+msgstr "المواصفة"
+
+msgid "Specifications"
+msgstr "المواصفات"
+
+msgid "Specs"
+msgstr "المواصفات"
+
+msgid "Stay in the Loop"
+msgstr "تابع جديدنا"
+
+msgid "Submit purchase request"
+msgstr "أرسل طلب الشراء"
+
+msgid "Subscribe"
+msgstr "اشترك"
+
+msgid "Supercar"
+msgstr "سيارة خارقة"
+
+msgid "Supercharged power"
+msgstr "قوة الشاحن الفائق"
+
+msgid "Support"
+msgstr "الدعم"
+
+msgid "Switch to dark mode"
+msgstr "التبديل إلى الوضع الداكن"
+
+msgid "Switch to light mode"
+msgstr "التبديل إلى الوضع الفاتح"
+
+msgid "Ten-speed automatic"
+msgstr "ناقل أوتوماتيكي بعشر سرعات"
+
+msgid "Term"
+msgstr "المدة"
+
+msgid "That time is already booked for this car in this city. Choose another time."
+msgstr "هذا الموعد محجوز لهذه السيارة في هذه المدينة. اختر موعدًا آخر."
+
+msgid "The 2010 redesign"
+msgstr "تصميم موستانج 2010"
+
+msgid "The 2011 GT500 used an aluminium-block supercharged V8 and a six-speed manual."
+msgstr "جاءت GT500 لعام 2011 بمحرك V8 بشاحن فائق وكتلة من الألمنيوم وناقل يدوي بست سرعات."
+
+msgid "The 2020 Shelby GT500 uses a supercharged V8 and a quick-shifting dual-clutch transmission."
+msgstr "تستخدم شيلبي GT500 لعام 2020 محرك V8 بشاحن فائق وناقلًا سريع التبديل بقابض مزدوج."
+
+msgid "The Boss 302 combines a six-speed manual with a chassis tuned for track use."
+msgstr "تجمع بوس 302 بين ناقل يدوي بست سرعات وشاسيه مضبوط للقيادة على الحلبة."
+
+msgid "The Bronco Raptor uses wider bodywork and long-travel suspension designed for off-road driving."
+msgstr "تستخدم برونكو رابتور هيكلًا أعرض ونظام تعليق طويل المشوار للطرق الوعرة."
+
+msgid "The Dark Horse pairs a modified Coyote V8 with a TREMEC manual gearbox and MagneRide adaptive damping."
+msgstr "تجمع دارك هورس بين محرك كايوتي V8 معدّل وناقل تريميك يدوي ونظام تعليق ماجنا رايد المتكيّف."
+
+msgid "The Experience"
+msgstr "التجربة"
+
+msgid "The F-150 Raptor combines a turbocharged V6 with off-road suspension and selectable drive modes for loose surfaces."
+msgstr "تجمع F‑150 رابتور بين محرك V6 توربيني وتعليق للطرق الوعرة وأوضاع قيادة للأسطح الرخوة."
+
+msgid "The Fiesta ST packs a turbocharged 1.6-litre engine into a compact hatchback."
+msgstr "تأتي فييستا ST بمحرك توربيني سعة 1.6 لتر في هيكل هاتشباك مدمج."
+
+msgid "The Fiesta ST pairs the EcoBoost engine with a six-speed manual transmission."
+msgstr "تقترن فييستا ST بمحرك إيكوبوست وناقل حركة يدوي بست سرعات."
+
+msgid "The Focus RS includes dedicated modes for track driving and drifting."
+msgstr "تشمل فوكس RS أوضاعًا مخصصة للقيادة على الحلبة والانجراف."
+
+msgid "The Focus ST combines a five-door body with turbocharged power and a manual gearbox."
+msgstr "تجمع فوكس ST بين هيكل بخمسة أبواب ومحرك توربيني وناقل يدوي."
+
+msgid "The Mach 1 returns with V8 power and cooling upgrades for sustained performance driving."
+msgstr "عادت ماك 1 بمحرك V8 وتحسينات في التبريد للقيادة الرياضية المطوّلة."
+
+msgid "The Mach-E GT uses a motor at each axle for electric all-wheel drive."
+msgstr "تستخدم ماك إي جي تي محركًا عند كل محور لتوفير دفع رباعي كهربائي."
+
+msgid "The Mustang GT pairs a naturally aspirated 5.0-litre V8 with a digital cockpit and the fastback profile that defines the Mustang. The stated output is for the available active valve performance exhaust."
+msgstr "تجمع موستانج جي تي بين محرك V8 سعة 5.0 لتر بتنفس طبيعي ومقصورة رقمية وتصميم فاستباك. القوة المذكورة تخص النسخة المزوّدة بعادم الأداء ذي الصمامات النشطة."
+
+msgid "The Platinum trim makes it easier to reach the cargo area with your hands full."
+msgstr "تسهّل فئة بلاتينيوم الوصول إلى صندوق الأمتعة عندما تكون يداك مشغولتين."
+
+msgid "The Ranger Raptor pairs a 3.0-litre twin-turbo V6 with a four-wheel-drive system tuned for off-road use."
+msgstr "تجمع رينجر رابتور بين محرك V6 سعة 3.0 لتر بتوربو مزدوج ونظام دفع رباعي مضبوط للطرق الوعرة."
+
+msgid "The TREMEC gearbox offers rev matching for smoother downshifts."
+msgstr "يطابق ناقل تريميك سرعة دوران المحرك عند خفض الترس لتبديل أكثر سلاسة."
+
+msgid "The Taurus combines a roomy five-seat cabin with a turbocharged engine and a calm, refined ride. It is equally at home on the daily commute and on longer journeys."
+msgstr "تجمع تورس بين مقصورة رحبة بخمسة مقاعد ومحرك توربيني وقيادة هادئة. تناسب التنقل اليومي والرحلات الطويلة."
+
+msgid "The Territory is a five-seat crossover with a practical cabin and available hybrid power. The Platinum trim adds features such as a panoramic sunroof and a 360-degree camera."
+msgstr "تيريتوري سيارة كروس أوفر بخمسة مقاعد ومقصورة عملية، ويتوفر منها خيار هجين. تضيف فئة بلاتينيوم مزايا منها السقف البانورامي وكاميرا 360 درجة."
+
+msgid "The U.S. Focus ST is rated at 252 hp."
+msgstr "تبلغ قوة فوكس ST بالمواصفات الأمريكية 252 حصانًا."
+
+msgid "The V8 Fastback"
+msgstr "فاستباك بمحرك V8"
+
+msgid "The featured GT pairs rear-wheel drive with a five-speed manual gearbox."
+msgstr "تجمع فئة جي تي المعروضة بين الدفع الخلفي وناقل يدوي بخمس سرعات."
+
+msgid "The front and rear lighting give the Taurus a distinctive profile."
+msgstr "تمنح المصابيح الأمامية والخلفية تورس مظهرًا مميزًا."
+
+msgid "The rear wing adjusts to change aerodynamic behaviour as the car is driven."
+msgstr "يتغيّر وضع الجناح الخلفي لضبط الأداء الهوائي أثناء القيادة."
+
+msgid "The refreshed GT featured a reworked 5.0-litre V8 and an available 10-speed automatic."
+msgstr "جاءت جي تي المحدّثة بمحرك V8 سعة 5.0 لتر مطوّر وناقل أوتوماتيكي اختياري بعشر سرعات."
+
+msgid "The return of the Boss"
+msgstr "عودة بوس 302"
+
+msgid "The road-going Ford GT pairs a carbon-fibre structure with a twin-turbo V6."
+msgstr "تجمع فورد جي تي المخصّصة للطرق بين هيكل من ألياف الكربون ومحرك V6 بتوربو مزدوج."
+
+msgid "The sixth-generation Mustang introduced independent rear suspension and a new fastback profile."
+msgstr "قدّم الجيل السادس من موستانج تعليقًا خلفيًا مستقلًا وتصميم فاستباك جديدًا."
+
+msgid "The special edition takes its cues from the Mustang in the film Bullitt."
+msgstr "استُلهم هذا الإصدار الخاص من موستانج التي ظهرت في فيلم بوليت."
+
+msgid "The suspension is designed to cope with rough terrain and large wheel movements."
+msgstr "صُمّم التعليق للتعامل مع الطرق الوعرة وحركة العجلات الكبيرة."
+
+msgid "The transmission uses two clutches to shorten gear changes."
+msgstr "يستخدم ناقل الحركة قابضين لتقليل زمن تبديل السرعات."
+
+msgid "The twin-turbo V6 delivers 420 horsepower in the Saudi-market configuration."
+msgstr "يولّد محرك V6 بتوربو مزدوج 420 حصانًا في نسخة السوق السعودي."
+
+msgid "This showroom brings together Ford vehicles from several generations so you can see what makes each one distinct."
+msgstr "يجمع المعرض سيارات فورد من أجيال مختلفة لتتعرّف على ما يميّز كل سيارة."
+
+msgid "Three distinct lamps on each side make the Mustang recognizable from behind."
+msgstr "تميّز المصابيح الثلاثة على كل جانب موستانج من الخلف."
+
+msgid "Time (Saudi Arabia)"
+msgstr "الوقت (بتوقيت السعودية)"
+
+msgid "Toggle navigation"
+msgstr "فتح قائمة التنقل أو إغلاقها"
+
+msgid "Track-oriented setup"
+msgstr "إعداد للحلبات"
+
+msgid "Transmission"
+msgstr "ناقل الحركة"
+
+msgid "Tri-Bar Taillights"
+msgstr "مصابيح خلفية ثلاثية"
+
+msgid "Trust"
+msgstr "الثقة"
+
+msgid "Try Taurus"
+msgstr "جرّب تورس"
+
+msgid "Under SAR 130,000"
+msgstr "أقل من 130,000 ريال"
+
+msgid "Up to 486 hp"
+msgstr "حتى 486 حصانًا"
+
+msgid "Vehicle details"
+msgstr "تفاصيل السيارة"
+
+msgid "View All"
+msgstr "عرض الكل"
+
+msgid "View full screen"
+msgstr "عرض بملء الشاشة"
+
+msgid "Why Choose Us"
+msgstr "لماذا تختارنا؟"
+
+msgid "Without Limits"
+msgstr "بلا حدود"
+
+msgid "Year"
+msgstr "السنة"
+
+msgid "Your Dream Car?"
+msgstr "سيارة أحلامك؟"
+
+msgid "Your email"
+msgstr "بريدك الإلكتروني"
+
+msgid "{amount} / month"
+msgstr "{amount} شهريًا"
+
+msgid "%(count)s Car Found"
+msgid_plural "%(count)s Cars Found"
+msgstr[0] "عدد السيارات المطابقة %(count)s"
+msgstr[1] "تم العثور على %(count)s سيارة"
+msgstr[2] "تم العثور على سيارتين (%(count)s)"
+msgstr[3] "تم العثور على %(count)s سيارات"
+msgstr[4] "تم العثور على %(count)s سيارة"
+msgstr[5] "عدد السيارات المطابقة %(count)s"

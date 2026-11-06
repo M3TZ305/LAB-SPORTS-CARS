@@ -1,30 +1,29 @@
 {% extends "showroom/base.html" %}
-{% load static %}
-{% block title %}About Us | Ford{% endblock %}
+{% load static i18n %}
+{% block title %}{% translate 'About Us | Ford' %}{% endblock %}
 {% block content %}
 <section class="hero sub-hero about-hero">
   <img class="hero-image is-active" src="{% static 'showroom/images/mustang-front.webp' %}" alt="">
-  <div class="container hero-inner"><div class="hero-copy"><p class="eyebrow">About Us</p><h1>Driven by<br>Passion</h1><p>Discover the design, engineering and character behind the Ford vehicles in our showroom.</p></div></div>
+  <div class="container hero-inner"><div class="hero-copy"><p class="eyebrow">{% translate 'About Us' %}</p><h1>{% translate 'Driven by' %}<br>{% translate 'Passion' %}</h1><p>{% translate 'Discover the design, engineering and character behind the Ford vehicles in our showroom.' %}</p></div></div>
 </section>
 <div class="container about-content">
   <section class="section story">
-    <div><h2>Our Story</h2><p>Ford Motor Company was founded in 1903. The Ford range has grown to serve very different drivers, from those who want the comfort of the Taurus to those drawn to the Mustang GT or the versatility of the Territory.</p><p>This showroom brings those three vehicles together so you can see what makes each one distinct.</p></div>
-    <img src="{% static 'showroom/images/showroom.webp' %}" alt="Al Jazirah Ford showroom in Saudi Arabia" width="800" height="560" loading="lazy">
+    <div><h2>{% translate 'Our Story' %}</h2><p>{% translate 'Ford Motor Company was founded in 1903. The Ford range has grown to serve very different drivers, from those who want the comfort of the Taurus to those drawn to the Mustang GT or the versatility of the Territory.' %}</p><p>{% translate 'This showroom brings together Ford vehicles from several generations so you can see what makes each one distinct.' %}</p></div>
+    <img src="{% static 'showroom/images/showroom.webp' %}" alt="{% translate 'Al Jazirah Ford showroom in Saudi Arabia' %}" width="800" height="560" loading="lazy">
   </section>
   <section class="section values">
-    <h2>Our Values</h2>
+    <h2>{% translate 'Our Values' %}</h2>
     <ul class="icon-grid reasons">
-      <li><span class="icon" aria-hidden="true">diamond</span><strong>Excellence</strong><small>Attention to the design and engineering that shape every drive.</small></li>
-      <li><span class="icon" aria-hidden="true">verified_user</span><strong>Trust</strong><small>Clear vehicle information to help you explore your options.</small></li>
-      <li><span class="icon" aria-hidden="true">star</span><strong>Passion</strong><small>A shared appreciation for cars with character.</small></li>
+      <li><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#diamond"></use></svg><strong>{% translate 'Excellence' %}</strong><small>{% translate 'Attention to the design and engineering that shape every drive.' %}</small></li>
+      <li><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#verified_user"></use></svg><strong>{% translate 'Trust' %}</strong><small>{% translate 'Clear vehicle information to help you explore your options.' %}</small></li>
+      <li><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#star"></use></svg><strong>{% translate "Passion for Cars" %}</strong><small>{% translate 'A shared appreciation for cars with character.' %}</small></li>
     </ul>
   </section>
   <section class="section about-callout-wrap">
     <div class="about-callout">
       <img src="{% static 'showroom/images/taurus-scene.webp' %}" alt="" loading="lazy">
-      <div><h2>More Than a Dealer</h2><p>Find the Ford that fits the way you want to drive.</p><a href="{% url 'showroom:car_list' %}" class="button secondary">Browse Cars <span class="icon" aria-hidden="true">arrow_forward</span></a></div>
+      <div><h2>{% translate 'More Than a Dealer' %}</h2><p>{% translate 'Find the Ford that fits the way you want to drive.' %}</p><a href="{% url 'showroom:car_list' %}" class="button secondary">{% translate 'Browse Cars' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
     </div>
   </section>
 </div>
 {% endblock %}
-

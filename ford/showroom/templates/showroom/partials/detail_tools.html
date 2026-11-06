@@ -1,0 +1,69 @@
+{% load i18n %}
+<div class="detail-tools">
+  <section class="tool-panel action-panel{% if active_action == 'purchase' %} is-active{% endif %}" id="purchase" aria-labelledby="purchase-title" tabindex="-1">
+    <div class="action-heading">
+      <h2 id="purchase-title">{% translate "Request cash purchase" %}</h2>
+      <a href="#vehicle-actions" class="text-link">{% translate "Close" %}</a>
+    </div>
+    <p class="tool-note">{% blocktranslate with price=car.price_display %}Cash price for this demo is {{ price }}. Submit a request to try the purchase flow. No payment is collected.{% endblocktranslate %}</p>
+    {% if confirmation and active_action == 'purchase' %}
+    <p class="tool-result" role="status">{% blocktranslate with number=confirmation.pk %}Demo purchase request #{{ number }} received.{% endblocktranslate %}</p>
+    {% else %}
+    <form class="tool-fields" action="{{ car.get_absolute_url }}#purchase" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="purchase">
+      {% for field in purchase_form %}
+      <div class="tool-field">{{ field.label_tag }}{{ field }}{{ field.errors }}</div>
+      {% endfor %}
+      <button class="button" type="submit">{% translate "Submit purchase request" %}</button>
+    </form>
+    {% endif %}
+  </section>
+  <section class="tool-panel action-panel{% if active_action == 'test-drive' %} is-active{% endif %}" id="test-drive" aria-labelledby="test-drive-title" tabindex="-1">
+    <div class="action-heading">
+      <h2 id="test-drive-title">{% translate "Book a test drive" %}</h2>
+      <a href="#vehicle-actions" class="text-link">{% translate "Close" %}</a>
+    </div>
+    <p class="tool-note">{% translate "Choose a city and a date for a demo test drive. Times are in Saudi Arabia." %}</p>
+    {% if confirmation and active_action == 'test-drive' %}
+    <p class="tool-result" role="status">{% blocktranslate with number=confirmation.pk city=confirmation.get_city_display date=confirmation.date|date:"j F Y" time=confirmation.slot|time:"H:i" %}Demo booking #{{ number }} confirmed in {{ city }} on {{ date }} at {{ time }}.{% endblocktranslate %}</p>
+    {% else %}
+    <form class="tool-fields" action="{{ car.get_absolute_url }}#test-drive" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="test-drive">
+      {% for field in drive_form %}
+      <div class="tool-field">{{ field.label_tag }}{{ field }}{{ field.errors }}</div>
+      {% endfor %}
+      <button class="button" type="submit">{% translate "Confirm demo booking" %}</button>
+    </form>
+    {% endif %}
+  </section>
+  <section class="tool-panel action-panel" id="installments" aria-labelledby="installments-title" tabindex="-1">
+    <div class="action-heading">
+      <h2 id="installments-title">{% translate "Installment calculator" %}</h2>
+      <a href="#vehicle-actions" class="text-link">{% translate "Close" %}</a>
+    </div>
+    <p class="tool-note">{% blocktranslate with price=car.price_display %}Based on the {{ price }} demo price. Estimates exclude fees.{% endblocktranslate %}</p>
+    <form class="tool-fields" data-installments data-price="{{ car.demo_price|stringformat:'d' }}"
+          data-invalid="{% translate 'Enter a valid down payment and annual rate.' %}"
+          data-monthly="{% translate '{amount} / month' %}">
+      <div class="tool-field">
+        <label for="down-payment">{% translate "Down payment (SAR)" %}</label>
+        <input id="down-payment" name="down" type="number" inputmode="decimal" min="0" max="{{ car.demo_price|stringformat:'d' }}" step="0.01" value="0" required>
+      </div>
+      <div class="tool-field">
+        <label for="loan-term">{% translate "Term" %}</label>
+        <select id="loan-term" name="months">
+          {% for months in terms %}<option value="{{ months }}"{% if months == 36 %} selected{% endif %}>{% blocktranslate %}{{ months }} months{% endblocktranslate %}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="tool-field">
+        <label for="annual-rate">{% translate "Annual rate" %} (%)</label>
+        <input id="annual-rate" name="rate" type="number" inputmode="decimal" min="0" max="100" step="0.01" value="0" required>
+      </div>
+      <button class="button secondary" type="submit">{% translate "Calculate payment" %}</button>
+      <output class="tool-result" for="down-payment loan-term annual-rate" aria-live="polite"></output>
+    </form>
+    <noscript><p class="tool-note">{% translate "Enable JavaScript to calculate a payment." %}</p></noscript>
+  </section>
+</div>

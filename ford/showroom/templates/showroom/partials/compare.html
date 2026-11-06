@@ -1,0 +1,49 @@
+{% load static i18n %}
+<details class="tool-panel compare-panel" id="compare"{% if comparison_requested %} open{% endif %}>
+  <summary>
+    <svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#compare_arrows"></use></svg>
+    <span>{% translate 'Compare cars' %}</span>
+    <span class="icon compare-caret" aria-hidden="true">expand_more</span>
+  </summary>
+  <div class="compare-body">
+  <form class="tool-fields" method="get" action="{% url 'showroom:car_list' %}#compare">
+    {% for key, value in selected.items %}{% if value %}<input type="hidden" name="{{ key }}" value="{{ value }}">{% endif %}{% endfor %}
+    <div class="tool-field">
+      <label for="compare-first">{% translate 'First car' %}</label>
+      <select name="compare" id="compare-first" required>
+        <option value="">{% translate 'Choose a model' %}</option>
+        {% for slug, name, year in models %}<option value="{{ slug }}"{% if slug == compare_first %} selected{% endif %}>{{ year }} · {% translate name %}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="tool-field">
+      <label for="compare-second">{% translate 'Second car' %}</label>
+      <select name="compare" id="compare-second" required>
+        <option value="">{% translate 'Choose a model' %}</option>
+        {% for slug, name, year in models %}<option value="{{ slug }}"{% if slug == compare_second %} selected{% endif %}>{{ year }} · {% translate name %}</option>{% endfor %}
+      </select>
+    </div>
+    <button class="button" type="submit">{% translate 'Compare' %}</button>
+  </form>
+  {% if comparison_error %}<p class="tool-error" role="alert">{{ comparison_error }}</p>{% endif %}
+  {% if comparison_cars %}
+  <table class="comparison-table">
+    <caption class="sr-only">{% translate 'Selected Ford models and specifications' %}</caption>
+    <thead><tr>
+      <th scope="col">{% translate 'Spec' %}</th>
+      {% for car in comparison_cars %}
+      <th scope="col"><a href="{{ car.get_absolute_url }}"><img src="{% static car.gallery.0.src %}" alt="" width="320" height="200" loading="lazy">{% translate car.name %}</a></th>
+      {% endfor %}
+    </tr></thead>
+    <tbody>
+      <tr><th scope="row">{% translate 'Model year' %}</th>{% for car in comparison_cars %}<td>{{ car.year }}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Body style' %}</th>{% for car in comparison_cars %}<td>{% translate car.body_style %}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Demo price' %}</th>{% for car in comparison_cars %}<td>{{ car.price_display }}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Engine' %}</th>{% for car in comparison_cars %}<td>{% translate car.engine %}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Power' %}</th>{% for car in comparison_cars %}<td>{% translate car.power %}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Gearbox' %}</th>{% for car in comparison_cars %}<td>{% translate car.transmission %}</td>{% endfor %}</tr>
+      <tr><th scope="row">{% translate 'Seats' %}</th>{% for car in comparison_cars %}<td>{{ car.seats }}</td>{% endfor %}</tr>
+    </tbody>
+  </table>
+  {% endif %}
+  </div>
+</details>

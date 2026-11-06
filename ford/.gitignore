@@ -3,3 +3,6 @@ __pycache__/
 *.py[cod]
 db.sqlite3
 .env
+
+# Include the compiled Arabic translation for local setup on Windows.
+!showroom/locale/ar/LC_MESSAGES/django.mo
