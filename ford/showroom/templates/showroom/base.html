@@ -9,8 +9,8 @@
   <meta name="description" content="{% translate 'Explore Ford models, compare specifications, and plan a demo test drive.' %}">
   <title>{% block title %}{% translate 'Ford' %}{% endblock %}</title>
   <link rel="icon" href="{% static 'showroom/images/ford.svg' %}">
-  <link rel="stylesheet" href="{% static 'showroom/css/site.css' %}">
-  <script defer src="{% static 'showroom/js/site.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'showroom/css/site.css' %}?v=mustang-generations">
+  <script defer src="{% static 'showroom/js/site.js' %}?v=mustang-generations"></script>
 </head>
 <body data-wishlist-save="{% translate 'Save to Wishlist' %}"
       data-wishlist-saved="{% translate 'Saved to Wishlist' %}">
@@ -25,7 +25,6 @@
         <a href="{% url 'showroom:home' %}" {% if page == 'home' %}aria-current="page"{% endif %}>{% translate 'Home' %}</a>
         <a href="{% url 'showroom:car_list' %}" {% if page == 'car_list' %}aria-current="page"{% elif page == 'car_detail' %}aria-current="location"{% endif %}>{% translate 'Cars' %}</a>
         <a href="{% url 'showroom:about' %}" {% if page == 'about' %}aria-current="page"{% endif %}>{% translate 'About Us' %}</a>
-        <a href="#contact">{% translate 'Contact' %}</a>
       </nav>
       {% endwith %}
       <div class="header-actions">

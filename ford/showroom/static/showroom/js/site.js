@@ -225,3 +225,118 @@ if (inventoryFilters) {
     if (event.target.matches("select")) inventoryFilters.requestSubmit();
   });
 }
+
+const compareTray = document.querySelector("[data-compare-tray]");
+if (compareTray) {
+  const compareForm = document.querySelector("#compare form");
+  const fields = [...compareForm.querySelectorAll('select[name="compare"]')];
+  const choices = new Map([...fields[0].options].filter(option => option.value)
+    .map(option => [option.value, option.textContent.trim()]));
+  const buttons = [...document.querySelectorAll("[data-compare-card]")];
+  const list = compareTray.querySelector("[data-compare-selection]");
+  const status = compareTray.querySelector("[data-compare-status]");
+  const submit = compareTray.querySelector("[data-compare-submit]");
+  const storageKey = "ford-compare";
+  let selectedCars = [];
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(storageKey) || "[]");
+    if (Array.isArray(saved)) selectedCars = [...new Set(saved.filter(slug => choices.has(slug)))].slice(0, 2);
+  } catch {
+    // The selection still works on this page.
+  }
+  const compared = fields.map(field => field.value);
+  if (compared.every(slug => choices.has(slug)) && compared[0] !== compared[1]) {
+    selectedCars = compared;
+  }
+
+  function renderComparison() {
+    compareTray.hidden = selectedCars.length === 0;
+    submit.disabled = selectedCars.length !== 2;
+    list.replaceChildren(...selectedCars.map(slug => {
+      const item = document.createElement("li");
+      const name = document.createElement("bdi");
+      name.textContent = choices.get(slug);
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.textContent = "×";
+      remove.setAttribute("aria-label", compareTray.dataset.remove + " — " + choices.get(slug));
+      remove.addEventListener("click", () => {
+        selectedCars = selectedCars.filter(car => car !== slug);
+        renderComparison();
+      });
+      item.append(name, remove);
+      return item;
+    }));
+    status.textContent = selectedCars.map(slug => choices.get(slug)).join(" · ");
+    buttons.forEach(button => {
+      const slug = button.dataset.compareCard;
+      const selected = selectedCars.includes(slug);
+      const label = selected ? button.dataset.remove : button.dataset.add;
+      button.hidden = false;
+      button.disabled = !selected && selectedCars.length === 2;
+      button.setAttribute("aria-pressed", String(selected));
+      button.setAttribute("aria-label", label + " — " + choices.get(slug));
+      button.querySelector("span").textContent = label;
+    });
+    try {
+      sessionStorage.setItem(storageKey, JSON.stringify(selectedCars));
+    } catch {
+      // Storage is optional.
+    }
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const slug = button.dataset.compareCard;
+      if (selectedCars.includes(slug)) selectedCars = selectedCars.filter(item => item !== slug);
+      else if (selectedCars.length < 2) selectedCars.push(slug);
+      renderComparison();
+    });
+  });
+  compareTray.querySelector("[data-compare-clear]").addEventListener("click", () => {
+    selectedCars = [];
+    renderComparison();
+  });
+  submit.addEventListener("click", () => {
+    fields.forEach((field, index) => { field.value = selectedCars[index]; });
+    compareForm.requestSubmit();
+  });
+  renderComparison();
+}
+
+const generations = document.querySelector("[data-generations]");
+if (generations) {
+  const links = [...generations.querySelectorAll("[data-generation-link]")];
+  const panels = [...generations.querySelectorAll("[data-generation-panel]")];
+  function showGeneration(link) {
+    links.forEach(item => {
+      if (item === link) item.setAttribute("aria-current", "true");
+      else item.removeAttribute("aria-current");
+    });
+    panels.forEach(panel => { panel.hidden = "#" + panel.id !== link.hash; });
+  }
+  const initial = links.find(link => link.hash === window.location.hash)
+    || links.find(link => link.hasAttribute("aria-current")) || links[0];
+  showGeneration(initial);
+  links.forEach(link => link.addEventListener("click", event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    showGeneration(link);
+  }));
+}
+
+const differences = document.querySelector("[data-differences-only]");
+if (differences) {
+  const rows = [...document.querySelectorAll(".comparison-table tbody tr")];
+  const matching = rows.filter(row => {
+    const cells = [...row.querySelectorAll("td")];
+    return cells.length === 2 && cells[0].textContent.trim() === cells[1].textContent.trim();
+  });
+  document.querySelector("[data-difference-control]").hidden = false;
+  function showDifferences() {
+    matching.forEach(row => { row.hidden = differences.checked; });
+    document.querySelector("[data-no-differences]").hidden = !differences.checked || matching.length !== rows.length;
+  }
+  differences.addEventListener("change", showDifferences);
+  showDifferences();
+}

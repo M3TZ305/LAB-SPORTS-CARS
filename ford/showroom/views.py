@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, QueryDict
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -70,7 +70,25 @@ def car_list(request):
         if not comparison_cars:
             comparison_error = _("Choose two different cars from the inventory.")
 
+    active_query = QueryDict(mutable=True)
+    active_query.update({key: value for key, value in selected.items() if value})
+    labels = {
+        "brand": _("Ford") if selected["brand"].lower() == "ford" else selected["brand"],
+        "model": _(selected_model),
+        "year": selected["year"],
+        "price": PRICE_RANGES.get(selected["price"], (selected["price"],))[0],
+        "q": selected["q"],
+    }
+    chips = []
+    for key in active_query:
+        remaining = active_query.copy()
+        remaining.pop(key)
+        chips.append((labels[key], remaining.urlencode()))
+
     return render(request, "showroom/car_list.html", {
+        "filter_chips": chips,
+        "timeline_cars": Car.objects.filter(name="Ford Mustang GT").order_by("year", "id"),
+        "active_timeline_year": selected["year"] if selected_model == "Ford Mustang GT" else "",
         "comparison_cars": comparison_cars,
         "comparison_requested": bool(comparison),
         "comparison_error": comparison_error,

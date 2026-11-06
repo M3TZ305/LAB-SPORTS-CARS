@@ -1198,3 +1198,42 @@ msgstr "استخدم الحروف أو الأرقام أو الرموز @ . + - 
 
 msgid "Use at least 8 characters. Avoid common passwords, numbers alone, and passwords similar to your username."
 msgstr "استخدم 8 أحرف أو رموز على الأقل. تجنّب كلمات المرور الشائعة، والأرقام وحدها، وكلمات المرور المشابهة لاسم المستخدم."
+
+msgid "Model year timeline"
+msgstr "الخط الزمني للموديلات"
+
+msgid "Active filters"
+msgstr "الفلاتر المطبّقة"
+
+msgid "Remove filter %(label)s"
+msgstr "إزالة فلتر %(label)s"
+
+msgid "Selected cars"
+msgstr "السيارات المختارة"
+
+msgid "Compare two cars"
+msgstr "قارن السيارتين"
+
+msgid "Clear selection"
+msgstr "مسح الاختيار"
+
+msgid "Add to comparison"
+msgstr "أضف للمقارنة"
+
+msgid "Remove from comparison"
+msgstr "أزل من المقارنة"
+
+msgid "Mustang through the generations"
+msgstr "موستانج عبر الأجيال"
+
+msgid "Show differences only"
+msgstr "أظهر الاختلافات فقط"
+
+msgid "The displayed specifications match."
+msgstr "المواصفات المعروضة متطابقة."
+
+msgid "Booking number"
+msgstr "رقم الحجز"
+
+msgid "Back to vehicle"
+msgstr "العودة إلى السيارة"

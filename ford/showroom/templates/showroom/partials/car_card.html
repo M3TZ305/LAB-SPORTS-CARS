@@ -6,4 +6,7 @@
     <div><h3><a href="{{ car.get_absolute_url }}">{% translate car.name %}</a></h3><p><bdi>{{ car.year }}</bdi> · <bdi>{{ car.price_display }}</bdi></p></div>
     <button type="button" class="icon-button heart" data-wishlist="{{ car.slug }}" aria-label="{% blocktranslate %}Save {{ vehicle }} to wishlist{% endblocktranslate %}" aria-pressed="false"><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#favorite"></use></svg></button>
   </div>
+  {% if comparison_enabled %}
+  {% include "showroom/partials/compare_button.html" %}
+  {% endif %}
 </article>

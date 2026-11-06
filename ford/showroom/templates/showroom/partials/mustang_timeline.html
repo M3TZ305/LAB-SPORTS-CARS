@@ -1,0 +1,32 @@
+{% load static i18n %}
+{% if timeline_cars %}
+<section class="container section generations" data-generations aria-labelledby="timeline-title">
+  <div class="section-heading">
+    <div><p class="eyebrow">{% translate "Model year timeline" %}</p><h2 id="timeline-title">{% translate "Mustang through the generations" %}</h2></div>
+  </div>
+  <nav aria-label="{% translate 'Model year timeline' %}">
+    <ul class="generation-years">
+      {% for car in timeline_cars %}
+      <li><a href="#generation-{{ car.slug }}" data-generation-link{% if active_timeline_year == car.year|stringformat:"s" %} aria-current="true"{% endif %}><bdi>{{ car.year }}</bdi></a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% for car in timeline_cars %}
+  <article class="generation-preview" id="generation-{{ car.slug }}" data-generation-panel>
+    <img src="{% static car.gallery.0.src %}" alt="{% translate car.gallery.0.alt %}" width="800" height="500" loading="lazy">
+    <div class="generation-copy">
+      <p class="eyebrow">{{ car.year }}</p>
+      <h3>{% translate car.name %}</h3>
+      <dl>
+        <div><dt>{% translate "Engine" %}</dt><dd>{% translate car.engine %}</dd></div>
+        <div><dt>{% translate "Power" %}</dt><dd>{% translate car.power %}</dd></div>
+      </dl>
+      <div class="generation-actions">
+        <a href="{{ car.get_absolute_url }}" class="button">{% translate "Vehicle details" %}</a>
+        {% include "showroom/partials/compare_button.html" %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}

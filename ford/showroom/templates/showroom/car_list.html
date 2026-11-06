@@ -18,15 +18,31 @@
     <label><span class="sr-only">{% translate 'Year' %}</span><select name="year" aria-label="{% translate 'Year' %}"><option value="">{% translate 'Year' %}</option>{% for year in years %}<option value="{{ year }}" {% if selected.year == year|stringformat:"s" %}selected{% endif %}>{{ year }}</option>{% endfor %}</select></label>
     <button class="button secondary filter-button" type="submit" aria-label="{% translate 'Apply filters' %}"><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#tune"></use></svg>{% translate 'Search' %}</button>
   </form>
-  {% include "showroom/partials/compare.html" %}
+  {% if filter_chips %}
+  <ul class="filter-chips" aria-label="{% translate 'Active filters' %}">
+    {% for label, params in filter_chips %}
+    <li><a href="{% url 'showroom:car_list' %}{% if params %}?{{ params }}{% endif %}#inventory"
+           aria-label="{% blocktranslate %}Remove filter {{ label }}{% endblocktranslate %}">
+      <bdi>{{ label }}</bdi><span aria-hidden="true">×</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if comparison_requested %}{% include "showroom/partials/compare.html" %}{% endif %}
+  <aside class="compare-tray" data-compare-tray data-remove="{% translate 'Remove from comparison' %}" hidden>
+    <span class="sr-only" role="status" data-compare-status></span>
+    <ul data-compare-selection aria-label="{% translate 'Selected cars' %}"></ul>
+    <button type="button" class="button" data-compare-submit disabled>{% translate 'Compare two cars' %}</button>
+    <button type="button" class="button secondary" data-compare-clear>{% translate 'Clear selection' %}</button>
+  </aside>
   <div class="section-heading results">
     <div>
       <h2>{% blocktranslate count count=page.paginator.count %}{{ count }} Car Found{% plural %}{{ count }} Cars Found{% endblocktranslate %}</h2>
       {% if selected.q %}<p>{% blocktranslate with query=selected.q %}Results for “{{ query }}”{% endblocktranslate %}</p>{% endif %}
     </div>
-    {% if selected.brand or selected.model or selected.price or selected.year or selected.q %}<a class="text-link" href="{% url 'showroom:car_list' %}">{% translate 'Clear filters' %}</a>{% endif %}
+    {% if selected.brand or selected.model or selected.price or selected.year or selected.q %}<a class="text-link" href="{% url 'showroom:car_list' %}#inventory">{% translate 'Clear filters' %}</a>{% endif %}
   </div>
-  <div class="car-grid inventory-grid">{% for car in page %}{% include "showroom/partials/car_card.html" %}{% empty %}<p class="empty-state">{% translate 'No Ford vehicles match your filters.' %}</p>{% endfor %}</div>
+  <div class="car-grid inventory-grid">{% for car in page %}{% include "showroom/partials/car_card.html" with comparison_enabled=True %}{% empty %}<p class="empty-state">{% translate 'No Ford vehicles match your filters.' %}</p>{% endfor %}</div>
   {% if page.paginator.count %}
   <nav class="pagination" aria-label="{% translate 'Results pages' %}">
     {% if page.has_previous %}<a href="?{% if filter_query %}{{ filter_query }}&amp;{% endif %}page={{ page.previous_page_number }}" aria-label="{% translate 'Previous page' %}"><svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#chevron_left"></use></svg></a>{% endif %}
@@ -34,5 +50,7 @@
     {% if page.has_next %}<a href="?{% if filter_query %}{{ filter_query }}&amp;{% endif %}page={{ page.next_page_number }}" aria-label="{% translate 'Next page' %}"><svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#chevron_right"></use></svg></a>{% endif %}
   </nav>
   {% endif %}
+  {% if not comparison_requested %}{% include "showroom/partials/compare.html" %}{% endif %}
 </section>
+{% include "showroom/partials/mustang_timeline.html" %}
 {% endblock %}

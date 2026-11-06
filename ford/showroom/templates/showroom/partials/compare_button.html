@@ -1,0 +1,6 @@
+{% load static i18n %}
+  <button class="compare-card text-link" type="button" data-compare-card="{{ car.slug }}" aria-pressed="false" hidden
+          data-add="{% translate 'Add to comparison' %}" data-remove="{% translate 'Remove from comparison' %}">
+    <svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#compare_arrows"></use></svg>
+    <span>{% translate 'Add to comparison' %}</span>
+  </button>

@@ -92,7 +92,7 @@ class ShowroomFeaturesTests(TestCase):
         self.assertEqual(self.client.cookies[settings.LANGUAGE_COOKIE_NAME].value, "ar")
         self.assertContains(response, 'lang="ar" dir="rtl"')
         self.assertContains(response, "فورد موستانج جي تي")
-        self.assertContains(response, "شراء نقدًا")
+        self.assertContains(response, "طلب شراء نقدي")
         self.assertContains(response, "اختر المدينة")
         self.assertContains(response, "الدفعة الأولى")
         search = self.client.get(reverse("showroom:car_list"), {"q": "موستانج 2010"})
@@ -152,3 +152,24 @@ class ShowroomFeaturesTests(TestCase):
         self.assertRedirects(self.client.get("/"), "/home/")
         self.assertRedirects(self.client.get("/home"), "/home/", status_code=301)
         self.assertContains(self.client.get("/home/"), 'data-hero-video')
+
+
+    def test_timeline_and_filter_chips_keep_only_the_remaining_filters(self):
+        url = reverse("showroom:car_list")
+        for language in ("en", "ar"):
+            with self.subTest(language=language):
+                response = self.client.get(
+                    url, {"model": "Ford Mustang GT", "year": "2018", "page": 2},
+                    HTTP_ACCEPT_LANGUAGE=language,
+                )
+                self.assertEqual(response.context["active_timeline_year"], "2018")
+                self.assertIn(2010, [car.year for car in response.context["timeline_cars"]])
+                self.assertEqual([car.slug for car in response.context["page"]], ["mustang-gt-2018"])
+                chips = dict(response.context["filter_chips"])
+                self.assertEqual(chips["2018"], "model=Ford+Mustang+GT")
+                self.assertContains(response, 'data-compare-card="mustang-gt-2018"')
+                self.assertContains(response, "data-compare-tray")
+
+    def test_home_shows_featured_inventory_before_benefits(self):
+        html = self.client.get(reverse("showroom:home")).content.decode()
+        self.assertLess(html.index("featured-grid"), html.index("benefit-band"))

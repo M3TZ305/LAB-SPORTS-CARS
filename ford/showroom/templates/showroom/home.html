@@ -3,6 +3,10 @@
 {% block title %}{% translate 'Ford | Home' %}{% endblock %}
 {% block content %}
 <section class="hero home-hero" aria-label="{% translate 'Discover Ford' %}" data-hero>
+  <div class="container hero-inner">
+    <div class="hero-copy"><h1>{% translate 'Performance' %}<br> {% translate 'Without Limits' %}</h1><p>{% translate 'Explore a collection of Ford vehicles built for every kind of drive.' %}</p><a class="button" href="{% url 'showroom:car_list' %}">{% translate 'Browse Cars' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
+  </div>
+  <div class="home-hero-media">
   {% for car in hero_cars %}
     {% if car.slug == 'mustang-gt' %}
     <video class="hero-image{% if forloop.first %} is-active{% endif %}" data-hero-video
@@ -14,8 +18,6 @@
     <img class="hero-image{% if forloop.first %} is-active{% endif %}" src="{% if car.slug == 'taurus' %}{% static 'showroom/images/taurus-hero.webp' %}{% else %}{% static car.gallery.0.src %}{% endif %}" alt="" {% if not forloop.first %}loading="lazy"{% endif %}>
     {% endif %}
   {% endfor %}
-  <div class="container hero-inner">
-    <div class="hero-copy"><h1>{% translate 'Performance' %}<br>{% translate 'Without Limits' %}</h1><p>{% translate 'Explore a collection of Ford vehicles built for every kind of drive.' %}</p><a class="button" href="{% url 'showroom:car_list' %}">{% translate 'Browse Cars' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
     <div class="hero-dots" aria-label="{% translate 'Featured image' %}">
       {% for car in hero_cars %}{% translate car.name as vehicle %}<button type="button" aria-label="{% blocktranslate %}Show {{ vehicle }}{% endblocktranslate %}" aria-pressed="{{ forloop.first|yesno:'true,false' }}"></button>{% endfor %}
     </div>
@@ -26,6 +28,10 @@
     </button>
   </div>
 </section>
+<section class="container section">
+  <div class="section-heading"><h2>{% translate 'Featured Cars' %}</h2><a class="text-link" href="{% url 'showroom:car_list' %}">{% translate 'View All' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
+  <div class="car-grid featured-grid">{% for car in cars %}{% include "showroom/partials/car_card.html" %}{% endfor %}</div>
+</section>
 <div class="benefit-band">
   <ul class="container icon-grid">
     <li><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#bolt"></use></svg>{% translate 'High Performance' %}</li>
@@ -34,10 +40,7 @@
     <li><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#headset_mic"></use></svg>{% translate 'Dedicated Support' %}</li>
   </ul>
 </div>
-<section class="container section">
-  <div class="section-heading"><h2>{% translate 'Featured Cars' %}</h2><a class="text-link" href="{% url 'showroom:car_list' %}">{% translate 'View All' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
-  <div class="car-grid featured-grid">{% for car in cars %}{% include "showroom/partials/car_card.html" %}{% endfor %}</div>
-</section>
+
 <section class="experience">
   <img src="{% static 'showroom/images/taurus-rear.webp' %}" alt="{% translate 'Ford Taurus rear lighting' %}" loading="lazy">
   <div><p class="eyebrow">{% translate 'The Experience' %}</p><h2>{% translate 'More Than a Car' %}</h2><p>{% translate 'From choosing a model to exploring a test drive, discover what makes each Ford feel at home on the road.' %}</p><a href="{% url 'showroom:about' %}" class="button">{% translate 'Learn More' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
@@ -54,7 +57,7 @@
 <section class="container section callout-wrap">
   <div class="callout">
     <img src="{% static 'showroom/images/mustang-rear.webp' %}" alt="" loading="lazy">
-    <div><h2>{% translate 'Ready to Drive' %}<br>{% translate 'Your Dream Car?' %}</h2><a href="{% url 'showroom:car_list' %}" class="button">{% translate 'Browse Collection' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
+    <div><h2>{% translate 'Ready to Drive' %}<br> {% translate 'Your Dream Car?' %}</h2><a href="{% url 'showroom:car_list' %}" class="button">{% translate 'Browse Collection' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
   </div>
 </section>
 {% endblock %}

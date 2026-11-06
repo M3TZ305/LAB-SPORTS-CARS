@@ -26,12 +26,17 @@
   </form>
   {% if comparison_error %}<p class="tool-error" role="alert">{{ comparison_error }}</p>{% endif %}
   {% if comparison_cars %}
+  <label class="compare-differences" data-difference-control hidden>
+    <input type="checkbox" data-differences-only>
+    {% translate "Show differences only" %}
+  </label>
+  <p class="tool-note" data-no-differences role="status" hidden>{% translate "The displayed specifications match." %}</p>
   <table class="comparison-table">
     <caption class="sr-only">{% translate 'Selected Ford models and specifications' %}</caption>
     <thead><tr>
       <th scope="col">{% translate 'Spec' %}</th>
       {% for car in comparison_cars %}
-      <th scope="col"><a href="{{ car.get_absolute_url }}"><img src="{% static car.gallery.0.src %}" alt="" width="320" height="200" loading="lazy">{% translate car.name %}</a></th>
+      <th scope="col"><a href="{{ car.get_absolute_url }}"><img src="{% static car.gallery.0.src %}" alt="" width="320" height="200" loading="lazy"><bdi>{{ car.year }}</bdi> · {% translate car.name %}</a></th>
       {% endfor %}
     </tr></thead>
     <tbody>

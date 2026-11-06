@@ -35,9 +35,9 @@
         {% for icon, label, value in specs %}<div><dt><span class="icon" aria-hidden="true">{{ icon }}</span>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
       </dl>
       <div class="vehicle-actions" id="vehicle-actions">
-        <a href="#purchase" class="button" data-action-link aria-controls="purchase">{% translate "Buy with Cash" %}</a>
-        <a href="#test-drive" class="button secondary" data-action-link aria-controls="test-drive">{% translate 'Book a Test Drive' %}</a>
+        <a href="#test-drive" class="button" data-action-link aria-controls="test-drive">{% translate 'Book a Test Drive' %}</a>
         <a href="#installments" class="button secondary" data-action-link aria-controls="installments">{% translate 'Estimate Payments' %}</a>
+        <a href="#purchase" class="button secondary" data-action-link aria-controls="purchase">{% translate 'Request cash purchase' %}</a>
       </div>
       <a href="{{ car.official_url }}" class="text-link official-link">{% translate 'Explore on Ford' %}</a>
       <button type="button" class="button secondary heart" data-wishlist="{{ car.slug }}" aria-pressed="false"><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#favorite"></use></svg><span data-wishlist-label>{% translate 'Save to Wishlist' %}</span></button>
@@ -61,9 +61,9 @@
   <section id="specifications" class="detail-specs" aria-labelledby="spec-title">
     <h2 id="spec-title">{% translate 'Specifications' %}</h2>
     <dl class="spec-table">
+      {% for icon, label, value in specs %}<div{% if forloop.counter <= 2 %} class="spec-lead"{% endif %}><dt>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
       <div><dt>{% translate 'Model year' %}</dt><dd>{{ car.year }}</dd></div>
       <div><dt>{% translate 'Body style' %}</dt><dd>{% translate car.body_style %}</dd></div>
-      {% for icon, label, value in specs %}<div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
     </dl>
   </section>
   {% else %}

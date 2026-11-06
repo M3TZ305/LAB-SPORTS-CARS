@@ -26,7 +26,17 @@
     </div>
     <p class="tool-note">{% translate "Choose a city and a date for a demo test drive. Times are in Saudi Arabia." %}</p>
     {% if confirmation and active_action == 'test-drive' %}
-    <p class="tool-result" role="status">{% blocktranslate with number=confirmation.pk city=confirmation.get_city_display date=confirmation.date|date:"j F Y" time=confirmation.slot|time:"H:i" %}Demo booking #{{ number }} confirmed in {{ city }} on {{ date }} at {{ time }}.{% endblocktranslate %}</p>
+    <div class="booking-receipt">
+      <p class="tool-result" role="status">{% blocktranslate with number=confirmation.pk city=confirmation.get_city_display date=confirmation.date|date:"j F Y" time=confirmation.slot|time:"H:i" %}Demo booking #{{ number }} confirmed in {{ city }} on {{ date }} at {{ time }}.{% endblocktranslate %}</p>
+      <dl class="spec-table">
+        <div><dt>{% translate "Model" %}</dt><dd><bdi>{{ car.year }}</bdi> · {% translate car.name %}</dd></div>
+        <div><dt>{% translate "City" %}</dt><dd>{{ confirmation.get_city_display }}</dd></div>
+        <div><dt>{% translate "Date" %}</dt><dd>{{ confirmation.date|date:"j F Y" }}</dd></div>
+        <div><dt>{% translate "Time (Saudi Arabia)" %}</dt><dd><bdi>{{ confirmation.slot|time:"H:i" }}</bdi></dd></div>
+        <div><dt>{% translate "Booking number" %}</dt><dd><bdi>#{{ confirmation.pk }}</bdi></dd></div>
+      </dl>
+      <a class="button secondary" href="{{ car.get_absolute_url }}">{% translate "Back to vehicle" %}</a>
+    </div>
     {% else %}
     <form class="tool-fields" action="{{ car.get_absolute_url }}#test-drive" method="post">
       {% csrf_token %}

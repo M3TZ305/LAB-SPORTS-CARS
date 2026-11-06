@@ -2,6 +2,7 @@
 {% load static i18n %}
 {% block title %}{% translate 'About Us | Ford' %}{% endblock %}
 {% block content %}
+{% get_current_language_bidi as rtl %}
 <section class="hero sub-hero about-hero">
   <img class="hero-image is-active" src="{% static 'showroom/images/mustang-front.webp' %}" alt="">
   <div class="container hero-inner"><div class="hero-copy"><p class="eyebrow">{% translate 'About Us' %}</p><h1>{% translate 'Driven by' %}<br>{% translate 'Passion' %}</h1><p>{% translate 'Discover the design, engineering and character behind the Ford vehicles in our showroom.' %}</p></div></div>
@@ -9,7 +10,7 @@
 <div class="container about-content">
   <section class="section story">
     <div><h2>{% translate 'Our Story' %}</h2><p>{% translate 'Ford Motor Company was founded in 1903. The Ford range has grown to serve very different drivers, from those who want the comfort of the Taurus to those drawn to the Mustang GT or the versatility of the Territory.' %}</p><p>{% translate 'This showroom brings together Ford vehicles from several generations so you can see what makes each one distinct.' %}</p></div>
-    <img src="{% static 'showroom/images/showroom.webp' %}" alt="{% translate 'Al Jazirah Ford showroom in Saudi Arabia' %}" width="800" height="560" loading="lazy">
+    <img src="{% static 'showroom/images/ford-headquarters-dearborn.webp' %}" alt="{% if rtl %}المقر العالمي لشركة فورد في ديربورن{% else %}Ford Motor Company world headquarters in Dearborn{% endif %}" width="1500" height="844" loading="lazy">
   </section>
   <section class="section values">
     <h2>{% translate 'Our Values' %}</h2>
@@ -27,3 +28,4 @@
   </section>
 </div>
 {% endblock %}
+
