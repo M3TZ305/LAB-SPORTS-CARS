@@ -3,7 +3,7 @@
 <article class="car-card">
   <a href="{{ car.get_absolute_url }}" class="card-photo"><img src="{% static car.gallery.0.src %}" alt="{% translate car.gallery.0.alt %}" width="640" height="400" loading="lazy"></a>
   <div class="card-body">
-    <div><h3><a href="{{ car.get_absolute_url }}">{% translate car.name %}</a></h3><p><bdi>{{ car.year }}</bdi> · <bdi>{{ car.price_display }}</bdi></p></div>
+    <div><h3><a href="{{ car.get_absolute_url }}">{% translate car.name %}</a></h3><p><bdi class="model-year">{{ car.year }}</bdi> · <bdi>{{ car.price_display }}</bdi></p></div>
     <button type="button" class="icon-button heart" data-wishlist="{{ car.slug }}" aria-label="{% blocktranslate %}Save {{ vehicle }} to wishlist{% endblocktranslate %}" aria-pressed="false"><svg class="icon instrument-icon" aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#favorite"></use></svg></button>
   </div>
   {% if comparison_enabled %}
