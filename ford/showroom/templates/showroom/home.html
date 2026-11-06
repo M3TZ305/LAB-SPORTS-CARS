@@ -3,14 +3,27 @@
 {% block title %}{% translate 'Ford | Home' %}{% endblock %}
 {% block content %}
 <section class="hero home-hero" aria-label="{% translate 'Discover Ford' %}" data-hero>
-  {% for car in cars %}
-  <img class="hero-image{% if forloop.first %} is-active{% endif %}" src="{% if forloop.first %}{% static 'showroom/images/taurus-hero.webp' %}{% else %}{% static car.gallery.0.src %}{% endif %}" alt="" {% if not forloop.first %}loading="lazy"{% endif %}>
+  {% for car in hero_cars %}
+    {% if car.slug == 'mustang-gt' %}
+    <video class="hero-image{% if forloop.first %} is-active{% endif %}" data-hero-video
+           data-desktop="{% static 'showroom/media/mustang-hero-4k.mp4' %}"
+           data-mobile="{% static 'showroom/media/mustang-hero-mobile.mp4' %}"
+           poster="{% static 'showroom/media/mustang-hero-poster.webp' %}"
+           muted loop playsinline preload="none" aria-hidden="true"></video>
+    {% else %}
+    <img class="hero-image{% if forloop.first %} is-active{% endif %}" src="{% if car.slug == 'taurus' %}{% static 'showroom/images/taurus-hero.webp' %}{% else %}{% static car.gallery.0.src %}{% endif %}" alt="" {% if not forloop.first %}loading="lazy"{% endif %}>
+    {% endif %}
   {% endfor %}
   <div class="container hero-inner">
     <div class="hero-copy"><h1>{% translate 'Performance' %}<br>{% translate 'Without Limits' %}</h1><p>{% translate 'Explore a collection of Ford vehicles built for every kind of drive.' %}</p><a class="button" href="{% url 'showroom:car_list' %}">{% translate 'Browse Cars' %} <svg class="icon instrument-icon" data-directional aria-hidden="true"><use href="{% static 'showroom/images/instrument-icons.svg' %}#arrow_forward"></use></svg></a></div>
     <div class="hero-dots" aria-label="{% translate 'Featured image' %}">
-      {% for car in cars %}{% translate car.name as vehicle %}<button type="button" aria-label="{% blocktranslate %}Show {{ vehicle }}{% endblocktranslate %}" aria-pressed="{{ forloop.first|yesno:'true,false' }}"></button>{% endfor %}
+      {% for car in hero_cars %}{% translate car.name as vehicle %}<button type="button" aria-label="{% blocktranslate %}Show {{ vehicle }}{% endblocktranslate %}" aria-pressed="{{ forloop.first|yesno:'true,false' }}"></button>{% endfor %}
     </div>
+    <button class="hero-motion-control" type="button" data-hero-playback hidden
+            data-play="{% translate 'Play video' %}" data-pause="{% translate 'Pause video' %}"
+            aria-label="{% translate 'Play video' %}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="hero-play" d="m8 5 12 7-12 7z"/><path class="hero-pause" d="M8 5v14m8-14v14"/></svg>
+    </button>
   </div>
 </section>
 <div class="benefit-band">

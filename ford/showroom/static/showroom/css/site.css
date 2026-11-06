@@ -462,3 +462,91 @@ html[dir="rtl"] .gallery-caption { direction: rtl; }
 }
 .header-actions .icon-button:hover .instrument-icon { color: var(--accent); }
 .compare-panel summary > .instrument-icon:first-child { color: var(--accent); }
+
+.detail-nav { scroll-margin-top: 1rem; }
+.detail-specs h2 { margin-bottom: 1rem; }
+.spec-table { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.spec-table > div { padding: .9rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.spec-table dt { color: var(--muted); font-size: .85rem; }
+.spec-table dd { margin: .3rem 0 0; font-weight: 800; }
+
+.theme-switch {
+  position: relative;
+  direction: ltr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  width: 58px;
+  height: 32px;
+  padding: 0 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--muted);
+}
+.theme-switch svg { z-index: 1; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.theme-thumb { position: absolute; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #ffe0a0; transition: transform .2s, background .2s; }
+.theme-switch svg:first-of-type { color: #653600; }
+html[data-theme="dark"] .theme-thumb { transform: translateX(26px); background: #243c63; }
+html[data-theme="dark"] .theme-switch svg:first-of-type { color: var(--muted); }
+html[data-theme="dark"] .theme-switch svg:last-of-type { color: #e0edff; }
+
+.social-logo { width: 21px; height: 21px; display: block; }
+.instagram-logo { fill: none; stroke: currentColor; stroke-width: 1.8; color: #ce376d; }
+.instagram-dot { fill: currentColor; stroke: none; }
+.youtube-logo { color: #e52124; }
+@media (max-width: 380px) {
+  .theme-switch { width: 52px; }
+  html[data-theme="dark"] .theme-thumb { transform: translateX(20px); }
+}
+
+video.hero-image { object-fit: cover; }
+.hero-motion-control {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 1.15rem;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: rgb(18 22 27 / .76);
+  border: 1px solid rgb(255 255 255 / .42);
+  border-radius: 50%;
+}
+.hero-motion-control:hover { background: #202630; }
+.hero-motion-control svg { width: 18px; height: 18px; }
+.hero-play { fill: currentColor; }
+.hero-pause { display: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; }
+.hero-motion-control[data-playing="true"] .hero-play { display: none; }
+.hero-motion-control[data-playing="true"] .hero-pause { display: inline; }
+@media (max-width: 680px) {
+  .hero-motion-control { bottom: .65rem; }
+}
+
+.account-page { padding-block: clamp(1.6rem, 4vw, 3.2rem); }
+.account-panel { width: min(100%, 25rem); margin-inline: auto; padding: clamp(1rem, 4vw, 1.5rem); }
+.account-panel h1 { font-size: clamp(1.4rem, 4vw, 1.75rem); }
+.account-options { display: flex; gap: 1rem; border-bottom: 1px solid var(--line); margin-bottom: 1.1rem; }
+.account-options a { padding: 0 0 .55rem; font-weight: 800; font-size: .88rem; color: var(--muted); border-bottom: 2px solid transparent; }
+.account-options [aria-current="page"] { color: var(--ink); border-color: var(--accent); }
+.account-form { display: grid; gap: .75rem; margin-top: .9rem; }
+.account-form label { display: block; margin-bottom: .3rem; font-weight: 800; font-size: .86rem; }
+.account-form input:not([type="hidden"]) {
+  width: 100%;
+  min-height: 43px;
+  padding: .45rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.account-form .helptext { margin: .3rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+.account-form .errorlist { margin: .35rem 0 0; padding-inline-start: 1.2rem; font-size: .82rem; font-weight: 800; }
+.account-form [aria-invalid="true"] { border-color: var(--accent); }
+.account-form > .button { width: 100%; }
+.header-actions .account-link { display: inline-grid; }
+@media (max-width: 680px) {
+  .header-inner { gap: .6rem; }
+  .header-actions .icon-button { width: 34px; height: 38px; }
+}

@@ -1165,3 +1165,36 @@ msgstr[2] "تم العثور على سيارتين (%(count)s)"
 msgstr[3] "تم العثور على %(count)s سيارات"
 msgstr[4] "تم العثور على %(count)s سيارة"
 msgstr[5] "عدد السيارات المطابقة %(count)s"
+
+msgid "Play video"
+msgstr "تشغيل الفيديو"
+
+msgid "Pause video"
+msgstr "إيقاف الفيديو مؤقتًا"
+
+msgid "My account"
+msgstr "حسابي"
+
+msgid "Sign in or create an account"
+msgstr "سجّل الدخول أو أنشئ حسابًا"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Create an account"
+msgstr "إنشاء حساب"
+
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+msgid "Signed in as %(username)s"
+msgstr "أنت مسجّل الدخول باسم %(username)s"
+
+msgid "Account options"
+msgstr "خيارات الحساب"
+
+msgid "Use letters, numbers, or @ . + - _. Spaces are excluded."
+msgstr "استخدم الحروف أو الأرقام أو الرموز @ . + - _ من دون مسافات."
+
+msgid "Use at least 8 characters. Avoid common passwords, numbers alone, and passwords similar to your username."
+msgstr "استخدم 8 أحرف أو رموز على الأقل. تجنّب كلمات المرور الشائعة، والأرقام وحدها، وكلمات المرور المشابهة لاسم المستخدم."

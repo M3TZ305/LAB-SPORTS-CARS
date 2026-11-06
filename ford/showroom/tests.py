@@ -111,3 +111,44 @@ class ShowroomFeaturesTests(TestCase):
         self.assertEqual([car.slug for car in response.context["page"]], ["mustang-gt"])
         response = self.client.get(url, {"compare": ["mustang-gt-2010", "mustang-gt-2018"]})
         self.assertContains(response, 'id="compare" open')
+
+    def test_vehicle_tabs_render_only_the_selected_section(self):
+        for car in Car.objects.all():
+            for tab in ("overview", "specifications", "features"):
+                with self.subTest(car=car.slug, tab=tab):
+                    response = self.client.get(car.get_absolute_url(), {"tab": tab})
+                    self.assertContains(response, f'id="{tab}"')
+                    for other in {"overview", "specifications", "features"} - {tab}:
+                        self.assertNotContains(response, f'id="{other}"')
+
+
+    def test_local_account_registration_login_and_logout(self):
+        from django.contrib.auth import get_user_model
+
+        login_url = reverse("showroom:login")
+        register_url = reverse("showroom:register")
+        logout_url = reverse("showroom:logout")
+        password = "Test-password-4781"
+        self.assertContains(self.client.get(login_url), register_url)
+        response = self.client.post(register_url, {
+            "username": "showroom-visitor", "password1": password, "password2": password,
+        })
+        self.assertRedirects(response, login_url)
+        user = get_user_model().objects.get(username="showroom-visitor")
+        self.assertNotEqual(user.password, password)
+        self.assertEqual(self.client.session["_auth_user_id"], str(user.pk))
+        self.assertEqual(self.client.get(logout_url).status_code, 405)
+        self.assertRedirects(self.client.post(logout_url), reverse("showroom:home"))
+        self.assertNotIn("_auth_user_id", self.client.session)
+
+        response = self.client.post(login_url, {
+            "username": user.username, "password": password, "next": "https://example.com/",
+        })
+        self.assertRedirects(response, login_url)
+        self.assertContains(self.client.get(login_url), user.username)
+
+    def test_home_has_a_named_url_and_root_redirect(self):
+        self.assertEqual(reverse("showroom:home"), "/home/")
+        self.assertRedirects(self.client.get("/"), "/home/")
+        self.assertRedirects(self.client.get("/home"), "/home/", status_code=301)
+        self.assertContains(self.client.get("/home/"), 'data-hero-video')

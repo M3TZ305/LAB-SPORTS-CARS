@@ -44,18 +44,29 @@
     </section>
   </div>
   {% include "showroom/partials/detail_tools.html" %}
-  <nav class="detail-nav" aria-label="{% translate 'Vehicle details' %}" data-detail-nav><a href="#overview" aria-current="location">{% translate 'Overview' %}</a><a href="#specifications"><span class="desktop-label">{% translate 'Specifications' %}</span><span class="mobile-label">{% translate 'Specs' %}</span></a><a href="#features">{% translate 'Features' %}</a><a href="#gallery">{% translate 'Gallery' %}</a></nav>
+  <nav class="detail-nav" id="vehicle-details" aria-label="{% translate 'Vehicle details' %}">
+    <a href="?tab=overview#vehicle-details"{% if detail_tab == 'overview' %} aria-current="page"{% endif %}>{% translate 'Overview' %}</a>
+    <a href="?tab=specifications#vehicle-details"{% if detail_tab == 'specifications' %} aria-current="page"{% endif %}><span class="desktop-label">{% translate 'Specifications' %}</span><span class="mobile-label">{% translate 'Specs' %}</span></a>
+    <a href="?tab=features#vehicle-details"{% if detail_tab == 'features' %} aria-current="page"{% endif %}>{% translate 'Features' %}</a>
+    <a href="#gallery">{% translate 'Gallery' %}</a>
+  </nav>
+  {% if detail_tab == "overview" %}
   <section class="overview" id="overview">
     <div><h2>{% translate car.headline %}</h2><p>{% translate car.description %}</p></div>
     {% with photo=car.gallery.1|default:car.gallery.0 %}
     <img src="{% static photo.src %}" alt="{% translate photo.alt %}" width="600" height="400" loading="lazy">
     {% endwith %}
   </section>
-  <section id="specifications" class="detail-specs" aria-label="{% translate 'Specifications' %}">
-    <ul class="icon-grid reasons">
-      {% for icon, label, value in specs %}<li><span class="icon" aria-hidden="true">{{ icon }}</span><strong>{{ value }}</strong><small>{{ label }}</small></li>{% endfor %}
-    </ul>
+  {% elif detail_tab == "specifications" %}
+  <section id="specifications" class="detail-specs" aria-labelledby="spec-title">
+    <h2 id="spec-title">{% translate 'Specifications' %}</h2>
+    <dl class="spec-table">
+      <div><dt>{% translate 'Model year' %}</dt><dd>{{ car.year }}</dd></div>
+      <div><dt>{% translate 'Body style' %}</dt><dd>{% translate car.body_style %}</dd></div>
+      {% for icon, label, value in specs %}<div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>{% endfor %}
+    </dl>
   </section>
+  {% else %}
   <section id="features" class="section features">
     <h2>{% translate 'Key Features' %}</h2>
     <div class="feature-grid">
@@ -65,5 +76,6 @@
     </div>
   </section>
 
+  {% endif %}
 </div>
 {% endblock %}

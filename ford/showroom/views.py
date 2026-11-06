@@ -1,3 +1,4 @@
+from django.contrib.auth import login
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import HttpResponseBadRequest
@@ -7,7 +8,7 @@ from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _, gettext_lazy
 from django.views.decorators.http import require_http_methods, require_POST
 
-from .forms import PurchaseForm, TestDriveForm
+from .forms import PurchaseForm, RegistrationForm, TestDriveForm
 from .models import Car, PurchaseRequest, TestDriveBooking
 
 PRICE_RANGES = {
@@ -17,7 +18,9 @@ PRICE_RANGES = {
 
 
 def home(request):
-    return render(request, "showroom/home.html", {"cars": Car.objects.all()[:3]})
+    cars = list(Car.objects.all()[:3])
+    hero_cars = sorted(cars, key=lambda car: car.slug != "mustang-gt")
+    return render(request, "showroom/home.html", {"cars": cars, "hero_cars": hero_cars})
 
 
 def car_list(request):
@@ -88,6 +91,9 @@ def car_list(request):
 @require_http_methods(["GET", "HEAD", "POST"])
 def car_detail(request, slug):
     car = get_object_or_404(Car, slug=slug)
+    detail_tab = request.GET.get("tab", "overview")
+    if detail_tab not in {"overview", "specifications", "features"}:
+        detail_tab = "overview"
     specs = [
         ("settings", _("Engine"), _(car.engine)),
         ("bolt", _("Power"), _(car.power)),
@@ -131,9 +137,20 @@ def car_detail(request, slug):
             request.session.pop("detail_confirmation")
 
     return render(request, "showroom/car_detail.html", {
-        "car": car, "specs": specs, "drive_form": drive_form, "purchase_form": purchase_form,
+        "car": car, "specs": specs, "detail_tab": detail_tab, "drive_form": drive_form, "purchase_form": purchase_form,
         "active_action": action, "confirmation": confirmation, "terms": (12, 24, 36, 48, 60),
     })
+
+
+@require_http_methods(["GET", "HEAD", "POST"])
+def register(request):
+    if request.user.is_authenticated:
+        return redirect("showroom:login")
+    form = RegistrationForm(request.POST if request.method == "POST" else None)
+    if request.method == "POST" and form.is_valid():
+        login(request, form.save())
+        return redirect("showroom:login")
+    return render(request, "showroom/account.html", {"form": form, "registering": True})
 
 
 def about(request):

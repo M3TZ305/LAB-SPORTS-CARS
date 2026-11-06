@@ -2,6 +2,7 @@ from datetime import date, time, timedelta
 from zoneinfo import ZoneInfo
 
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
 from django.utils.formats import date_format
 from django.utils.translation import gettext_lazy as _
@@ -42,3 +43,13 @@ class TestDriveForm(ContactForm):
 class PurchaseForm(ContactForm):
     def clean_email(self):
         return self.cleaned_data["email"].lower()
+
+
+class RegistrationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].help_text = _("Use letters, numbers, or @ . + - _. Spaces are excluded.")
+        self.fields["password1"].help_text = _(
+            "Use at least 8 characters. Avoid common passwords, numbers alone, and passwords similar to your username."
+        )
+        self.fields["password2"].help_text = ""

@@ -16,12 +16,49 @@ const hero = document.querySelector("[data-hero]");
 if (hero) {
   const photos = [...hero.querySelectorAll(".hero-image")];
   const dots = [...hero.querySelectorAll(".hero-dots button")];
+  const video = hero.querySelector("[data-hero-video]");
+  const toggle = hero.querySelector("[data-hero-playback]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let pausedByUser = navigator.connection?.saveData === true;
+
+  function updateControl() {
+    toggle.dataset.playing = String(!video.paused);
+    toggle.setAttribute("aria-label", video.paused ? toggle.dataset.play : toggle.dataset.pause);
+  }
+
+  function syncVideo() {
+    if (!video) return;
+    const enabled = video.classList.contains("is-active") && !reducedMotion.matches;
+    toggle.hidden = !enabled;
+    if (!enabled || pausedByUser) {
+      video.pause();
+      return;
+    }
+    if (!video.hasAttribute("src")) {
+      const mobile = window.matchMedia("(max-width: 680px)").matches;
+      video.src = mobile ? video.dataset.mobile : video.dataset.desktop;
+    }
+    video.play().catch(updateControl);
+  }
+
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       photos.forEach((photo, number) => photo.classList.toggle("is-active", index === number));
       dots.forEach((item, number) => item.setAttribute("aria-pressed", String(index === number)));
+      syncVideo();
     });
   });
+
+  if (video) {
+    toggle.addEventListener("click", () => {
+      pausedByUser = !video.paused;
+      syncVideo();
+    });
+    video.addEventListener("play", updateControl);
+    video.addEventListener("pause", updateControl);
+    reducedMotion.addEventListener("change", syncVideo);
+    syncVideo();
+  }
 }
 
 const gallery = document.querySelector("[data-gallery]");
@@ -78,19 +115,6 @@ if (gallery) {
   gallery.querySelectorAll("[data-gallery-step]").forEach((button) => {
     button.addEventListener("click", () => showPhoto(current + Number(button.dataset.galleryStep)));
   });
-}
-
-const detailLinks = [...document.querySelectorAll("[data-detail-nav] a")];
-function highlightDetailLink() {
-  const target = window.location.hash || "#overview";
-  detailLinks.forEach((link) => {
-    if (link.hash === target) link.setAttribute("aria-current", "location");
-    else link.removeAttribute("aria-current");
-  });
-}
-if (detailLinks.length) {
-  highlightDetailLink();
-  window.addEventListener("hashchange", highlightDetailLink);
 }
 
 const wishlistKey = "ford-wishlist";
